@@ -1,0 +1,2 @@
+class LanguageKnown < ApplicationRecord
+end

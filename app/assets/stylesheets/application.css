@@ -1,0 +1,125 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+a{
+  text-decoration: none;
+
+}
+
+
+a:hover{
+	background-color: transparent;
+  color:black ;
+}
+.buton {
+  background-color: #5a5a5a;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  color: #ffffff !important;
+  font-weight: 600;
+  height: 1.5em;
+  padding: 0.5em 1em;
+  text-align: center;
+}
+
+.drop{
+  float: left;
+  padding: 0.5em;
+
+}
+.drop a{
+  padding: 0.5em;
+}
+
+li .buton:hover{
+
+  background-color: black;
+}
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 200px;
+  margin-top: 1em;
+  text-align: left;
+  font-size: 15px;
+  
+
+  }
+
+  .dropdown-content a {
+    text-decoration: none;
+    display:block;
+    padding: 0.5em;
+  }
+
+  .dropdown-content a:hover {
+    background-color: grey;
+    color: white!important;
+  }
+  
+
+  .dropdown:hover .dropdown-content{
+    display: block;
+  
+  }
+
+.body{
+  margin: 0;
+  padding: 0;
+}
+
+.mainheader{
+  height:70px; 
+  width:100%;
+  background-color: grey;
+  margin: 0;
+  padding: 0;
+}
+.list-group{
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+.list-group-item:first-child {
+  float:left;
+  list-style-type: none;
+  width: 10%;
+  border: none;
+  background: transparent;
+  }
+
+.list-group-item:not(:first-child) {
+  float:right;
+  list-style-type: none;
+
+  border: none;
+  background: transparent;
+  }
+
+.list-group-item a{
+  color: white;
+  font-size: 17px;
+  text-decoration: none;
+  background: transparent;
+}
+.list-group-item :hover {
+  color: black;
+  background: transparent;
+  text-decoration: none;
+} 

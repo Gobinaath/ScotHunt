@@ -1,0 +1,15 @@
+<div style="margin-top: 2em;">
+<%= form_for :login do |l| %>
+ <%= l.label :roles%><br>
+   
+  <%= l.select :roles, [ 'job_seeker','recruiter','moderator' ] %><br>
+<%= l.label :email %><br>
+<%= l.email_field :email %><br>
+<%= l.label :password %><br>
+<%= l.password_field :password %><br>
+<p><%= link_to "forgotten password?", new_password_reset_path %></p> 
+    <%= l.label :remember_me %>
+    <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+<%= l.submit "Login" ,style: 'margin-top:10px;margin-left:70px' %><br>
+<% end %>
+</div>

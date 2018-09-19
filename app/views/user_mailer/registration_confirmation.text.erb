@@ -1,0 +1,6 @@
+ hi <%= @user.first_name %>
+
+ Thanks for registering! To confirm your registration ,please click the link below:
+
+ 
+<%= link_to "scothunt - Confirm Your Email",confirm_email_url(@user.confirm_token) %>

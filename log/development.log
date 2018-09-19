@@ -1,0 +1,324 @@
+  [1m[35m (152.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (120.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(228619805264958240);[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateJobSeekers (20170717123718)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (87.4ms)[0m  [1m[35mCREATE TABLE "job_seekers" ("id" bigserial primary key, "users_id" bigint, "first_name" character varying, "last_name" character varying, "age" integer, "preffered_role" character varying, "prefferd_industry" character varying, "preffered_location" character varying, "preffered_organisation" character varying, "job_period_from" date, "job_period_to" date, "current_salary" decimal, "expected_salary" decimal, "language_known" character varying, "linkedin_link" character varying, "skype_id" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (42.4ms)[0m  [1m[35mCREATE  INDEX  "index_job_seekers_on_users_id" ON "job_seekers"  ("users_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170717123718"]]
+  [1m[35m (27.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEducationDetails (20170717130526)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (123.6ms)[0m  [1m[35mCREATE TABLE "education_details" ("id" bigserial primary key, "job_seekers_id" bigint, "university" character varying, "under_graduation" character varying, "post_graduation" character varying, "course_name" character varying, "education_level_certificates" character varying, "year_and_month_of_graduation" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (54.0ms)[0m  [1m[35mCREATE  INDEX  "index_education_details_on_job_seekers_id" ON "education_details"  ("job_seekers_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170717130526"]]
+  [1m[35m (17.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateExperianceDetails (20170717130731)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (110.1ms)[0m  [1m[35mCREATE TABLE "experiance_details" ("id" bigserial primary key, "job_seekers_id" bigint, "organisation_name" character varying, "place" character varying, "start_date" date, "end_date" date, "designation" character varying, "work_description" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (57.9ms)[0m  [1m[35mCREATE  INDEX  "index_experiance_details_on_job_seekers_id" ON "experiance_details"  ("job_seekers_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170717130731"]]
+  [1m[35m (16.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSkillsets (20170717131135)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (92.9ms)[0m  [1m[35mCREATE TABLE "skillsets" ("id" bigserial primary key, "job_seekers_id" bigint, "sill_name" character varying, "skill_level" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (59.9ms)[0m  [1m[35mCREATE  INDEX  "index_skillsets_on_job_seekers_id" ON "skillsets"  ("job_seekers_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170717131135"]]
+  [1m[35m (9.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAwards (20170717131348)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (93.7ms)[0m  [1m[35mCREATE TABLE "awards" ("id" bigserial primary key, "job_seekers_id" bigint, "award_name" character varying, "award_description" character varying, "year_of_the_award" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (43.1ms)[0m  [1m[35mCREATE  INDEX  "index_awards_on_job_seekers_id" ON "awards"  ("job_seekers_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170717131348"]]
+  [1m[35m (26.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUploads (20170717131611)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (105.3ms)[0m  [1m[35mCREATE TABLE "uploads" ("id" bigserial primary key, "job_seekers_id" bigint, "cover_letter" character varying, "resume" character varying, "video_pitch" character varying, "sample_project" character varying, "project_description" character varying, "career_aspirations" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (43.2ms)[0m  [1m[35mCREATE  INDEX  "index_uploads_on_job_seekers_id" ON "uploads"  ("job_seekers_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170717131611"]]
+  [1m[35m (25.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRecruiters (20170717131911)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (83.6ms)[0m  [1m[35mCREATE TABLE "recruiters" ("id" bigserial primary key, "users_id" bigint, "organisation_name" character varying, "designation" character varying, "industry" character varying, "linkedin_link" character varying, "photo" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (78.1ms)[0m  [1m[35mCREATE  INDEX  "index_recruiters_on_users_id" ON "recruiters"  ("users_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170717131911"]]
+  [1m[35m (22.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateJobListings (20170717133231)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (86.5ms)[0m  [1m[35mCREATE TABLE "job_listings" ("id" bigserial primary key, "recruiters_id" bigint, "job_title" character varying, "job_type" character varying, "job_location" character varying, "job_category" character varying, "job_period" character varying, "job_description" character varying, "compensation" decimal, "company_name" character varying, "website" character varying, "company_description" character varying, "linkedin_link" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (43.0ms)[0m  [1m[35mCREATE  INDEX  "index_job_listings_on_recruiters_id" ON "job_listings"  ("recruiters_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170717133231"]]
+  [1m[35m (33.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateJobApplications (20170717134603)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (87.3ms)[0m  [1m[35mCREATE TABLE "job_applications" ("id" bigserial primary key, "job_seekers_id" bigint, "job_listings_id" bigint, "apply_date" date, "status" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (42.8ms)[0m  [1m[35mCREATE  INDEX  "index_job_applications_on_job_seekers_id" ON "job_applications"  ("job_seekers_id")[0m
+  [1m[35m (43.1ms)[0m  [1m[35mCREATE  INDEX  "index_job_applications_on_job_listings_id" ON "job_applications"  ("job_listings_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170717134603"]]
+  [1m[35m (20.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20170725121253)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35m    CREATE TYPE user_roles AS ENUM ('job_seeker', 'recruiter','moderator');
+[0m
+  [1m[35m (98.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "roles" user_roles, "first_name" character varying, "last_name" character varying, "email" character varying, "password" character varying, "mobile_num" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170725121253"]]
+  [1m[35m (20.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddSaltToUsers (20170725121709)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "salt" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170725121709"]]
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddEmailConfirmColumnToUsers (20170725121824)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (121.6ms)[0m  [1m[35mALTER TABLE "users" ADD "email_confirmed" boolean DEFAULT 'f'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "confirm_token" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170725121824"]]
+  [1m[35m (9.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAuthTokenToUsers (20170725122034)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "auth_token" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170725122034"]]
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPasswordResetToUsers (20170725122112)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "password_reset_token" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "password_reset_sent_at" timestamp[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170725122112"]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUniversityNameToUsers (20170810084830)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "university_name" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170810084830"]]
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddOrganisationNameToUsers (20170810132859)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "organisation_name" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170810132859"]]
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDesignationToUsers (20170810132929)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "designation" character varying[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170810132929"]]
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveFirstNameFromJobSeekers (20170831113547)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "job_seekers" DROP "first_name"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "job_seekers" DROP "last_name"[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170831113547"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveAgeFromJobSeekers (20170831115347)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "job_seekers" DROP "age"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "job_seekers" DROP "language_known"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "job_seekers" DROP "job_period_from"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "job_seekers" DROP "job_period_to"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170831115347"]]
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDobToJobSeekers (20170831115713)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "job_seekers" ADD "dob" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "job_seekers" ADD "profile_title" character varying[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "job_seekers" ADD "profile_description" character varying[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170831115713"]]
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveUnderGraduationFromEducationDetails (20170831120249)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "education_details" DROP "under_graduation"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "education_details" DROP "post_graduation"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "education_details" DROP "education_level_certificates"[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170831120249"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddGraduationToEducationDetails (20170831120521)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "education_details" ADD "graduation" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "education_details" ADD "place" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "education_details" ADD "grade" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170831120521"]]
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAssignments (20170831120800)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (110.4ms)[0m  [1m[35mCREATE TABLE "assignments" ("id" bigserial primary key, "images_link" character varying, "videos_link" character varying, "assignment_description" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170831120800"]]
+  [1m[35m (9.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddCarreerAspirationToJobSeekers (20170831121451)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "job_seekers" ADD "carreer_aspiration" character varying[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170831121451"]]
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAvailableDates (20170831141327)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (101.5ms)[0m  [1m[35mCREATE TABLE "available_dates" ("id" bigserial primary key, "internfrom" character varying, "internto" character varying, "projectfrom" character varying, "projectto" character varying, "fulltimefrom" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170831141327"]]
+  [1m[35m (18.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLanguagesKnowns (20170831163318)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35m    CREATE TYPE level AS ENUM ('novice', 'intermediary','expert');
+[0m
+  [1m[35m (56.8ms)[0m  [1m[35mCREATE TABLE "languages_knowns" ("id" bigserial primary key, "english" level, "spanish" level, "scotish" level)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170831163318"]]
+  [1m[35m (29.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddProviderToUsers (20170904160316)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "users" ADD "provider" character varying[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170904160316"]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddNameToUsers (20170904160909)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "name" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170904160909"]]
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUidToUsers (20170905070121)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170905070121"]]
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateClients (20170905094004)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (91.1ms)[0m  [1m[35mCREATE TABLE "clients" ("id" bigserial primary key, "provider" character varying, "uid" character varying, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170905094004"]]
+  [1m[35m (17.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLanguageKnowns (20170905131444)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (113.8ms)[0m  [1m[35mCREATE TABLE "language_knowns" ("id" bigserial primary key, "english" character varying, "spanish" character varying, "scotish" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170905131444"]]
+  [1m[35m (17.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddNameToRecruiters (20170913080736)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "recruiters" ADD "name" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "recruiters" ADD "email" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "recruiters" ADD "mobilenumber" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170913080736"]]
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveIndustryFromRecruiters (20170913081045)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "recruiters" DROP "industry"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170913081045"]]
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveMobilenumberFromRecruiters (20170913101925)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "recruiters" DROP "mobilenumber"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170913101925"]]
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddMobilenumberToRecruiters (20170913101939)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "recruiters" ADD "mobilenumber" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170913101939"]]
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddJobSeekersToAssignments (20170913131035)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "assignments" ADD "job_seekers_id" bigint[0m
+  [1m[35m (55.5ms)[0m  [1m[35mCREATE  INDEX  "index_assignments_on_job_seekers_id" ON "assignments"  ("job_seekers_id")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "assignments" ADD CONSTRAINT "fk_rails_c506a5a327"
+FOREIGN KEY ("job_seekers_id")
+  REFERENCES "job_seekers" ("id")
+[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170913131035"]]
+  [1m[35m (25.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddJobSeekersToAvailableDates (20170913131128)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "available_dates" ADD "job_seekers_id" bigint[0m
+  [1m[35m (52.3ms)[0m  [1m[35mCREATE  INDEX  "index_available_dates_on_job_seekers_id" ON "available_dates"  ("job_seekers_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "available_dates" ADD CONSTRAINT "fk_rails_ebfb273c86"
+FOREIGN KEY ("job_seekers_id")
+  REFERENCES "job_seekers" ("id")
+[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170913131128"]]
+  [1m[35m (26.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddJobSeekersToLanguageKnowns (20170913131311)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "language_knowns" ADD "job_seekers_id" bigint[0m
+  [1m[35m (57.1ms)[0m  [1m[35mCREATE  INDEX  "index_language_knowns_on_job_seekers_id" ON "language_knowns"  ("job_seekers_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "language_knowns" ADD CONSTRAINT "fk_rails_dccf81fef9"
+FOREIGN KEY ("job_seekers_id")
+  REFERENCES "job_seekers" ("id")
+[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170913131311"]]
+  [1m[35m (24.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPhoneNumberToJobListing (20170921085509)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "job_listings" ADD "phone_number" decimal[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "job_listings" ADD "email" character varying[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170921085509"]]
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPrefferedJobTypeToJobSeeker (20171026155956)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "job_seekers" ADD "preffered_job_type" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171026155956"]]
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAddressToJobSeeker (20171027082922)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "job_seekers" ADD "address" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "job_seekers" ADD "phone_number" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171027082922"]]
+  [1m[35m (9.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddFromdateToEducationDetail (20171027083112)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "education_details" ADD "fromdate" date[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "education_details" ADD "todate" date[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171027083112"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveYearAndMonthOfGraduationFromEducationDetail (20171027083440)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "education_details" DROP "year_and_month_of_graduation"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171027083440"]]
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateViews (20171027102008)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (48.2ms)[0m  [1m[35mCREATE TABLE "views" ("id" bigserial primary key, "job_seekers_id" bigint, "recruiters_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (42.9ms)[0m  [1m[35mCREATE  INDEX  "index_views_on_job_seekers_id" ON "views"  ("job_seekers_id")[0m
+  [1m[35m (43.0ms)[0m  [1m[35mCREATE  INDEX  "index_views_on_recruiters_id" ON "views"  ("recruiters_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171027102008"]]
+  [1m[35m (26.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateShortlists (20171027102432)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (49.0ms)[0m  [1m[35mCREATE TABLE "shortlists" ("id" bigserial primary key, "job_seekers_id" bigint, "recruiters_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (43.1ms)[0m  [1m[35mCREATE  INDEX  "index_shortlists_on_job_seekers_id" ON "shortlists"  ("job_seekers_id")[0m
+  [1m[35m (54.2ms)[0m  [1m[35mCREATE  INDEX  "index_shortlists_on_recruiters_id" ON "shortlists"  ("recruiters_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171027102432"]]
+  [1m[35m (25.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-03 17:50:40.617886"], ["updated_at", "2018-09-03 17:50:40.617886"]]
+  [1m[35m (10.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(228619805264958240)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2018-09-03 23:29:59 +0530
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 14ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 12:16:58 +0530
+  [1m[35m (49.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 111ms (Views: 88.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-17 15:57:38 +0530
+  [1m[35m (47.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 110ms (Views: 87.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/blog" for 127.0.0.1 at 2018-09-17 16:01:52 +0530
+Processing by HomeController#blog as HTML
+  Rendering home/blog.html.erb within layouts/application
+  Rendered home/blog.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-17 18:33:20 +0530
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+

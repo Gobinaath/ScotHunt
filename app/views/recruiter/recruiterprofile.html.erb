@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recruiter Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet"> 
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style>
+  body{
+font-family: 'Lato', sans-serif;
+  }
+#one{
+       background:linear-gradient(0deg,rgba(20,20,20,0.75),rgba(20,20,20,0.75)),url("/assets/studentprofilebg.png");
+      background-size: cover;
+      width: 100%;
+        color: white;
+  
+  padding: 8em 0;
+}
+
+.logoutbtn{
+  float:right;
+  margin: 1em;
+  padding:0 0.5em;
+  background-color: transparent;
+  border-radius: 10px;
+  border:1px solid white;
+  color: white;
+}
+.logoutbtn a:hover{
+text-decoration: none;
+color: white;
+
+}
+
+.feature-icon{
+    
+    width:100px;
+    height:100px;
+   margin-left: 5em;
+   text-align: center;
+   float: left;
+    -webkit-transform: rotate(45deg);
+    -webkit-transition: border-color 0.3s;
+    -moz-transform: rotate(45deg);
+    -moz-transition: border-color 0.3s;
+    transform: rotate(45deg);
+    border-radius:20px;
+      
+}
+ #circle {
+      width: 120px;
+      height: 120px;
+      -webkit-border-radius: 150px;
+      -moz-border-radius: 150px;
+      border-radius: 150px;
+      border: 1px solid black;
+      margin: 2em 9em 0 9em; 
+      
+    }
+    .contact{
+      margin: 0.5em;
+      border: 2px solid black;  
+      border-radius: 100px; 
+      padding: 0.5em;
+    }
+     input[type=text],select
+{
+   width: 80%;
+    padding: 12px 15px;
+    margin: 8px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+
+}
+input[type=text]:first-letter{
+  text-transform: uppercase;
+}
+
+ #circle {
+      width: 120px;
+      height: 120px;
+    
+   
+      margin-left: 10em;
+      border:1px solid black; 
+    }
+  .footer-bs {
+    background-color: #3c3d41;
+  padding: 40px 20px;   
+  color: rgba(255,255,255,1.00);
+  
+
+}
+.footer-bs .footer-brand, .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { padding:10px 20px; }
+.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-color: transparent; }
+.footer-bs .footer-brand h2 { margin:0px 0px 10px; }
+.footer-bs .footer-brand p { font-size:15px; color:rgba(255,255,255,0.70); }
+
+.footer-bs .footer-nav ul.pages { list-style:none; padding:0px; }
+.footer-bs .footer-nav ul.pages li { padding:5px 0px;}
+.footer-bs .footer-nav ul.pages a { color:rgba(255,255,255,0.75); }
+.footer-bs .footer-nav ul.pages a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+.footer-bs .footer-nav h4 {
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom:10px;
+}
+
+::-webkit-input-placeholder{
+  color: white;
+}
+::-moz-placeholder{
+  color: white;
+  opacity: 1;
+}
+.footer-bs .footer-social ul { list-style:none; padding:0px; }
+.footer-bs .footer-social h4 {
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+.footer-bs .footer-social li { padding:5px 4px;}
+.footer-bs .footer-social a { color:rgba(255,255,255,0.75);}
+.footer-bs .footer-social a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+
+.footer-bs .footer-ns h4 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom:10px;
+}
+.footer-bs .footer-ns p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+@media (min-width: 768px) {
+  .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-left:solid 1px rgba(255,255,255,0.10); }
+}   
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+   
+    color: black;
+}
+
+.modal-body {padding: 2px 16px;}
+.headerrow{background-color: #0471d0;color: white
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+option{
+  background-color: #0066CC;
+}
+select {
+/* make arrow and background */
+   width: 80%;
+    padding: 12px 15px;
+    margin: 8px 0;
+
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+  background:
+    linear-gradient(45deg, transparent 50%, white 50%),
+    linear-gradient(135deg, white 50%, transparent 50%),
+    linear-gradient(to right, transparent, transparent);
+  background-position:
+    calc(100% - 21px) calc(1em + 2px),
+    calc(100% - 16px) calc(1em + 2px),
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2.5em 2.5em;
+  background-repeat: no-repeat;
+
+  /* styling and reset */
+
+  border-left: 0;
+  border-right: 0;
+  
+
+
+
+  /* reset */
+
+  border-radius: 0;
+  margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+}
+}
+</style>
+</head>
+<body>
+  <header >
+      <a class="navbar-brand" href="/home/index"><img style="height:30px;width:200px; padding-left: 2em" src="/assets/scot'shuntlogo.png"></a>
+     <a href="/logout" class="logoutbtn" style="text-decoration: none;"><span class="glyphicon glyphicon-user"></span> Logout</a>
+    <a href="#" style="text-decoration: none;color: white;float: right;margin: 1em;"><u>C</u>hecklist</a>
+    <a href="#" style="text-decoration: none;color: white;float: right;margin: 1em;"><u>R</u>eports</a>
+    <a href="#" style="text-decoration: none;color: white;float: right;margin: 1em;"><u>H</u>ome</a>
+
+
+    </header>
+      <div class="container" id="one">
+  <div class="diamond" style="margin-left: 30em;">
+  <div class="feature-icon" style="background-color:#0471d0 ">
+ 
+    </div>
+     <div style="position:absolute;">
+  <h1 style="margin-left: 2em;text-align: center;" ><b><%=@jobsposted.count%></b></h1>
+  <p style="margin-top: 5em;margin-left: 5em;"> No of Jobs Posted</p>
+  </div>
+      <div class="feature-icon" style="background-color: #abc237;">
+  
+    </div>
+      <div style="position:absolute;">
+  <h1 style="margin-left: 7em;text-align: center;"><b><%=@applicantscount.count%></b></h1>
+  <p style="margin-top: 5em;margin-left: 17em;"> No of Applicants</p>
+  </div>
+      <div class="feature-icon" style="background-color: #1a99d5; ">
+  
+    </div>
+      <div style="position:absolute;">
+  <h1 style="margin-left: 12.25em;"><b>78</b></h1>
+    <p style="margin-top: 5em;margin-left: 28em;"> No of peaple Shortlisted</p>
+  </div>
+</div>
+ 
+</div>
+  
+    <div class="row" style="margin: 1em;">
+      <div class="col-md-4" style="border: 1px solid black;box-shadow: 10px 10px 5px lightgrey;">
+      <div class="photo">
+
+      <div id="circle">
+  
+<a href="/recruiter/edit"><img src= "/assets/edit1.png" style="position: absolute; padding:1em 9em;color:white;"></a>
+<img src="/assets/photo1.png"  style="position: absolute;padding: 1.25em">
+
+
+</div>
+<h2 style="text-align: center;"><b><%=@recruiter.name%></b></h2>
+<p style="font-size: 20px;text-align: center;"><%=@recruiter.designation%></p>
+<p style="text-align: center;"><%=@recruiter.organisation_name%></p>
+<div style="margin-left: 9em;">
+<img src="/assets/msg.png" class="contact">
+<img src="/assets/phone.png" class="contact">
+<img src="/assets/linkedin.png" class="contact">
+</div>
+</div>
+      </div>
+
+      <div class="col-md-8" style="margin-left: 2em;width: 800px;
+  height: 285px;
+  background-size: cover;
+   background:linear-gradient(0deg,rgba(26,153,213,0.75),rgba(26,153,213,0.75)),url('/assets/postjob.png');box-shadow: 10px 10px 5px lightgrey;;
+  " >
+      
+      <h1 style="color:white;padding:1em 2.5em;text-align: center;">Post a job with the <br> Scot'sHunt carreer community</h1>
+      <a href="/recruiterjobpost/recruiterjobpost"><button class="btn btn-default" style="margin-left: 22em;color: blue">POST A JOB</button></a>
+      
+      <!--<img src="/home/gobi/Documents/recruiterprofile/postjob.png">-->
+
+      </div>
+    </div>
+
+<div class="row " style="margin: 2em;margin-bottom: 0;">
+<div class="col-md-4" style="text-align: center;">
+  <h3 style="color:  #0066CC;">Search ScotsHunt Students</h3>
+</div>
+  <div class="col-md-8" style="text-align: center">
+  <div class="row">    
+   <h3 style="color:  #0066CC;">Posted Job Responses</h3>
+  </div>
+
+  </div>
+</div>
+
+
+ <div class="row" style="margin: 2em;margin-top: 0;">
+  <div class="col-md-4" style="background-color: #0066CC; padding: 0em 2em 4em 2em;">
+  <form name="studentsearchform" id="studentsearchform">
+  <h3 style="color: white;text-align: left;">Search Students &nbsp<span class="glyphicon glyphicon-search"></span></h3> 
+  <input type="text" name="keyword" placeholder="keyword" ">
+  <h3 style="color: white;text-align: left;">Job Category</h3>  
+  <input type="text" name="preffered_role" placeholder="All Job Category" style="background: transparent;">
+  <h3 style="color: white;text-align: left;">Job Type</h3>  
+  <input type="text" name="preffered_job_type" placeholder="All Job Type" style="background: transparent;">
+  <h3 style="color: white;text-align: left;">Job Location</h3>  
+  <input type="text" name="preffered_location" placeholder="All Job Location" style="background: transparent;">
+  <h3 style="color: white;text-align: left;">Salary Offer</h3>  
+  <input type="text" name="expected_salary" placeholder="All Salary Offer" style="background: transparent;">
+<h3 style="color: white;text-align: left;">Experiance Level</h3>  
+  <input type="text" name="experiance_level" placeholder="All Experiance Level" style="background: transparent;"><br>
+  <br>
+
+<center><input type="submit" name="search students" id="searchstudents"></center>
+  </form>
+    <!--<form name="studentsearchform" id="studentsearchform">
+  <h3 style="color: white;text-align: left;">Search Students &nbsp<span class="glyphicon glyphicon-search"></span></h3> 
+        
+ <input type="text" name="preffered_role" placeholder="Keyword" style="background: transparent;">
+             
+  <h3 style="color: white;text-align: left;">Job Category</h3>  
+             <select>
+    <option value=""disabled>All Job Category</option>
+    <option value="">Computer Science</option>
+    <option value="">Manager</option>
+    <option value="">Front-End</option>
+    <option value="">Designer</option>
+  <option value="">Marketting</option>
+  <option value="">Finance</option>
+  <option value="">HR</option>   
+  <option value="">Mechanical</option>
+  <option value="">Digital Marketting</option>
+  <option value="">Electronics</option>
+</select>
+  
+  <h3 style="color: white;text-align: left;">Job Type</h3>  
+          <select>
+    <option value="" disabled>All Job Type</option>
+    <option value="">Internship</option>
+    <option value="">Project</option>
+    <option value="">Full Time Employment</option>
+    
+</select>
+  <h3 style="color: white;text-align: left;">Job Location</h3>  
+          <select>
+    <option value="" disabled>All Job Location</option>
+    <option value="">Chennai</option>
+    <option value="">Bangalore</option>
+    <option value="">Mumbai</option>
+    <option value="">Delhi</option>
+</select> <h3 style="color: white;text-align: left;">Salary Offer</h3>  
+          <select>
+    <option value=""  disabled>All salary offer</option>
+    <option value="">10000</option>
+    <option value="">15000</option>
+    <option value="">20000</option>
+    <option value="">25000</option>
+    <option value="">30000</option>
+    <option value="">35000</option>
+</select><h3 style="color: white;text-align: left;">Experiance Level</h3> 
+          <select>
+    <option value=""disabled>All Experiance Level </option>
+    <option value="">0</option>
+    <option value="">>0</option>
+    <option value="">1-2</option>
+    <option value="">2-3</option>
+     <option value="">3-4</option>
+      <option value="">4-5</option>
+       <option value="">5-6</option>
+</select> <br><br><br><br>
+
+<center><input type="submit" name="search students" id="searchstudents"></center>
+  </form>-->
+  </div>
+  <div class="col-md-8" style="box-shadow: 10px 10px 5px lightgrey;" >
+    <div class="row" style="background-color: #0066CC; margin-left: 1em;height: 60px;" >
+    <div class="col-md-5" >
+  <h3 style="text-align: center;font-size: 18px;color: white;"><b>Job Name</b></h3>
+    </div>
+    <div class="col-md-2">
+    <h3 style="text-align: center;font-size: 18px;color: white;"><b>JobType</b></h3>
+    </div>
+    <div class="col-md-2">
+    <h3 style="text-align: center;font-size: 18px;color: white;"><b>Location</b></h3>
+    </div>
+    <div class="col-md-2">
+    <h3 style="text-align: center;font-size: 18px;color: white;"><b>No of Applicants</b></h3>
+    </div>
+     
+  </div>
+<div id="studentsearch">
+<div id="stusearch">
+  
+   <%=render :partial=>'studentsearch'%>
+
+  
+
+</div>
+  </div>
+
+  </div>  
+  </div>
+   <footer class="footer-bs">
+        <div class="row">
+          <div class="col-md-4 footer-brand animated fadeInLeft">
+              <h2>About Scot's Hunt</h2>
+              <img src="/assets/scothunt.png" class="pull-left img-responsive">
+                <p>University of west scotland is simply dummy text of the printing and<br> typesetting industry. Lorem Ipsum has been the industry's standard dummy.<br> University of west scotland is simply dummy text of the printing and<br> typesetting industry. Lorem Ipsum has been the industry's standard<br> dummy</p>
+                <p> CopyRight 2017 Scot's Hunt</p>
+            </div>
+          <div class="col-md-3 footer-nav animated fadeInUp">
+              <h2>Quick Links</h2>
+              <div class="col-md-6">
+                    <ul class="pages">
+                        <li><a href="#">Local jobs</a></li>
+                        <li><a href="#">Browse jobs</a></li>
+                        <li><a href="#">SuccessStories</a></li>
+                        <li><a href="#">Post a Job</a></li>
+                        <li><a href="#">Publisher</a></li>
+                    </ul>
+                </div>
+            
+            </div>
+          <div class="col-md-2 footer-social animated fadeInDown">
+              <h2>Company</h2>
+              <ul>
+                  <li><a href="#">Company Directory</a></li>
+                  <li><a href="#">Salary estimate</a></li>
+                  <li><a href="#">Help</a></li>
+                  <li><a href="#">Employer Login</a></li>
+                  <li><a href="#">Include My Jobs</a></li>
+                </ul>
+            </div>
+       <div class="col-md-3 footer-ns animated fadeInRight">
+       <img src="/assets/fb.png" style="background: grey;margin: 0.5em;border-radius: 5px;">
+              <img src="/assets/p.png"  style="background: grey;margin: 0.5em;border-radius: 5px;">
+              <img src="/assets/insta.png"  style="background: grey;margin: 0.5em;border-radius: 5px;">
+              <img src="/assets/twitter.png"  style="background: grey;margin: 0.5em;border-radius: 5px;">
+              <h2>Newsletter</h2>
+                <p>Subscribe to get our latest updates and offers</p>
+                <p>
+                    <div class="input-group" style="background-color: transparent;">
+                      <input type="text" style="background-color: transparent;border: 1px solid white;"  class="form-control" placeholder="Enter your email">
+                      <span  style="border: 1px solid white;" class="input-group-btn">
+                        <button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
+                      </span>
+                    </div><!-- /input-group -->
+                 </p>
+            </div>  
+        </div>
+    </footer>
+    <!-- The Modal -->
+<div id="myModal" class="modal"  role="dialog">
+
+  <%=render :partial=>'applicantmodal'%>
+
+
+</div> 
+<div id="searchmodal" class="modal" role="dialog">
+<%=render :partial => 'studentsearchmodal'%>
+</div>
+
+ 
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>
+      jQuery(document).ready(function($){
+  var searchstudents = $('#searchstudents');
+
+  var  applicantdetails = $('.applicantdetail');
+    
+  searchstudents.on('click',function(event){
+   
+           event.preventDefault();
+          $.ajax({
+      type : 'GET',
+
+      url : "/recruiter/search",
+
+      data :$('#studentsearchform').serialize(),
+      
+      dataType : 'html',
+      
+      success : function(response) {
+  
+   $('#searchmodal').html(response);
+      var modal = document.getElementById('searchmodal');
+       modal.style.display = "block";
+      }
+
+
+    });
+
+  });
+
+  applicantdetails.on('click',function(event){
+      id=$(this).data("id")
+           event.preventDefault();
+          $.ajax({
+      type : 'GET',
+
+      url : "/recruiter/applicantdetails",
+
+      data :"job_listings_id="+id,
+      
+      dataType : 'html',
+      
+      success : function(response) {
+      $('#myModal').html(response);
+      var modal = document.getElementById('myModal');
+       modal.style.display = "block";
+
+      }
+
+
+    });
+
+  });
+});
+</script>
+</body>
+</html>

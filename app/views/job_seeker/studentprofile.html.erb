@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>studentprofile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">   
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet"> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!--<link rel="stylesheet" href="studentprofile.css">-->
+  <style>
+    body{
+  overflow-x: hidden;
+  font-family: 'Lato';
+}
+#one{
+       background:linear-gradient(0deg,rgba(20,20,20,0.75),rgba(20,20,20,0.75)),url("/assets/studentprofilebg.png");
+      background-size: cover;
+      width: 100%;
+        color: white;
+  
+  padding: 5em 0 3em 0  ;
+}
+.role:first-letter{
+text-transform: uppercase;
+}
+.logoutbtn{
+  float:right;
+ margin-right: 8em;
+ margin-top: 2.5em;
+  padding:0.25em 1em;
+  background-color: transparent;
+  border-radius: 50px;
+  border:1px solid white;
+  color: white;
+  font-size: 15px;
+}
+.logoutbtn :hover{
+text-decoration: none;
+color: white;
+
+}
+
+input[type="text"],
+select.form-control {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+  color: white;
+
+}
+
+input[type="text"]:focus,
+select.form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.input-group-addon{
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+  color: white;
+
+}
+
+.input-group:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+ #circle {
+      width: 250px;
+      height: 250px;
+      -webkit-border-radius: 150px;
+      -moz-border-radius: 150px;
+      border-radius: 150px;
+      background: #2C2A2A;
+      margin-left: 5em;
+      border:solid white 5px;
+    }
+    .downloadcv{
+      color: white;
+      background: transparent;
+      border: 1px solid white;
+  border-radius: 30px;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+ 
+width:33%;
+
+margin-left: 1em;
+  position: absolute;
+  padding: 0.25em;
+    }
+     #circlee {
+      width: 100px;
+      height: 100px;
+      -webkit-border-radius: 500px;
+      -moz-border-radius: 500px;
+      border-radius: 500px;
+      background: white;
+float: left;
+    margin: 2em 0.25em;
+      border:10px solid lightblue ;
+      
+     
+    }
+    .video{
+      margin-top: 6em;
+      margin-left: 5em;
+    }
+    .personaldetails{
+      margin-top: 4em;
+      margin-left: 2em;
+    }
+     .jobdetails{
+      margin-top: 4em;
+      margin-left: 2em;
+    }
+    .skillsets{
+    margin-top: 4em;
+      margin-left: 2em;
+    }
+.box{
+color: white;
+background-color:blue;
+width:absolute;
+padding:0 0.5em;
+border-radius: 5px;
+font-size: 16px;
+float: left;
+height: 25px;
+margin-top: 3em;
+
+
+  
+ }
+  .round{
+color:#357EC7;;
+border-radius: 500px;
+-moz-border-radius: 500px;
+-webkit-border-radius: 500px;
+
+background-color:white;
+width:12%;
+height: 22px;
+float: left;
+margin-left: 0.5em;
+margin-top: 3em;
+
+
+font-family: 'Lato', sans-serif;
+ }
+ .workexperiance{
+  margin-top: 5em;
+ }
+.verticalLine {
+  border-left: 1px solid black;
+  height: 70px;
+  margin-left: 0.25em;
+}
+  #cir{
+      width: 10px;
+      height: 10px;
+      -webkit-border-radius: 25px;
+      -moz-border-radius: 25px;
+      border-radius: 25px;
+      background: black;
+    }
+    .availablefor{
+      margin-top: 4em;
+    }
+     label{
+      margin-left: 1em;
+    }
+    .assignments{
+      margin-top: 5em;
+      margin-left: 2em;
+    }
+    .vidio{
+           margin: 0.25em;
+
+    }
+      .footer-bs {
+    background-color: #3c3d41;
+  padding: 40px 20px;   
+  color: rgba(255,255,255,1.00);
+  margin-top: 3em;
+  
+
+}
+.footer-bs .footer-brand, .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { padding:10px 20px; }
+.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-color: transparent; }
+.footer-bs .footer-brand h2 { margin:0px 0px 10px; }
+.footer-bs .footer-brand p { font-size:15px; color:rgba(255,255,255,0.70); }
+
+.footer-bs .footer-nav ul.pages { list-style:none; padding:0px; }
+.footer-bs .footer-nav ul.pages li { padding:5px 0px;}
+.footer-bs .footer-nav ul.pages a { color:rgba(255,255,255,0.75); }
+.footer-bs .footer-nav ul.pages a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+.footer-bs .footer-nav h4 {
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom:10px;
+}
+
+
+
+.footer-bs .footer-social ul { list-style:none; padding:0px; }
+.footer-bs .footer-social h4 {
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+.footer-bs .footer-social li { padding:5px 4px;}
+.footer-bs .footer-social a { color:rgba(255,255,255,0.75);}
+.footer-bs .footer-social a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+
+.footer-bs .footer-ns h4 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom:10px;
+}
+.footer-bs .footer-ns p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+@media (min-width: 768px) {
+  .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-left:solid 1px rgba(255,255,255,0.10); }
+}
+select {
+/* make arrow and background */
+
+  background:
+    linear-gradient(45deg, transparent 50%, white 50%),
+    linear-gradient(135deg, white 50%, transparent 50%),
+    linear-gradient(to right, transparent, transparent);
+  background-position:
+    calc(100% - 21px) calc(1em + 2px),
+    calc(100% - 16px) calc(1em + 2px),
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2.5em 2.5em;
+  background-repeat: no-repeat;
+
+  /* styling and reset */
+
+  border: 1px solid white;
+  border-left: 0;
+  border-right: 0;
+  
+
+  padding: 0.75em 2em;
+
+  /* reset */
+
+  border-radius: 0;
+  margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  border-top: 0;
+}
+ .rectangle{
+  background-color: white;
+  height: 70px;
+  width:25%;
+margin-left: 35em;
+position: absolute;
+
+ border-radius: 10px;
+ border: 3px solid #0080ff;
+
+}
+.rectangle:hover{
+  width:35%;
+}
+.call{
+  display: none;
+}
+
+.phone:hover + .call{
+  display:block;
+}
+.email{
+  display: none;
+
+}
+.letter:hover + .email{
+  display: block;
+}
+.shortlist{
+  display:none;
+}
+.shake:hover + .shortlist{
+  display:block;
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+   
+    color: black;
+}
+
+.modal-body {padding: 2px 16px;}
+.headerrow{
+  background-color: #0471d0;
+  color: white;
+
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+option{
+  background-color: grey;
+
+}
+a:hover{
+  color:white ;
+}
+.hidden {
+    height:100px;
+    display:none;
+    color: white
+}
+    .hidden.open {
+        display:block;
+    }
+  
+  </style>
+</head>
+<body>
+
+  <header >
+    <a class="navbar-brand" href="/home/index"><img style="height:30px;width:200px; padding-left: 2em" src="/assets/scot'shuntlogo.png"></a>
+     <%if params[:id].present? %>
+ <div style="display: none">
+ </div>
+ <%else%>
+    <a href="/logout" class="logoutbtn" style="text-decoration: none;"><span class="glyphicon glyphicon-user"></span> Logout</a>
+    <%end%>
+  </header>
+  <div class="container" id="one">
+  <%if params[:id].present? %>
+    <div class="rectangle">
+    <div class="phonebox">
+    <div id = "phone" style="color: black;float: left;padding: 1em 2em;cursor: pointer; " class="phone" >
+    <img src="/assets/phone(1).png">
+          <div class="hidden">
+        9787195187
+    </div>
+    </div>
+    <div class="call" style="color: black;float: left;padding: 0 2em;border:1px solid #0080ff;background-color: #0080ff;">
+    <h2>Call</h2>
+
+    </div>
+    </div>
+    <div class="letterbox">
+    <div id="letter" style="color: black;float: left;padding: 1em 2em;cursor: pointer;/*border:1px solid #0080ff;" class="letter">
+    <img src="/assets/letter.png">
+    </div>
+     <div class="email" style="color: black;float: left;padding: 0 2em;border:1px solid #0080ff;background-color: #0080ff;">
+    <h2>email</h2>
+    </div>
+    </div>
+     <div class="shortlistbox">
+     <%#<%if @shortlist.present?%>
+     <div style="display: none">
+       
+     </div>
+     <%#<%else%>
+    <div data-id="<%=@student.id%>" style="color: black;float: left;padding: 1em 2em;cursor: pointer;/*border:1px solid #0080ff;" class="shake">
+    <img src="/assets/shorlist.png" style="width:40px;height:40px;">
+    </div>
+    <%#<%end%>
+     <div class="shortlist" style="color: black;float: left;padding: 0 2em;border:1px solid #0080ff;background-color: #0080ff;">
+    <h2>Shortlist</h2>
+    </div>
+    </div>
+    <!--<div style="margin-top: 1em;">
+      <span style="color: black;margin: 1em;margin-top: 5em;font-size: 20px;"><b>X</b></span>
+    </div>-->
+    <div>
+    </div>
+  </div>
+  <%else%>
+    <div class="container" style="margin-left: 14em;margin-top: 3em;" id="searchjob">   
+      <h2 style="font-size: 30px;font-weight: 300" >Find your job &nbsp&nbsp<span class="glyphicon glyphicon-search" style="color: white;"></span></h2>
+      <form class="form-inline" method="get" action="/job_listing/job_listing" style="padding-top: 1em;">
+
+        <div class="form-group">
+          <div class='input-group-field'>
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-stats"></span></span>
+                <!-- <input class= "form-control" type="text" id="dropdownMenu1" placeholder="Industry" name="job_category">
+          --><select name="job_category" style="width: 150px;font-weight: 300;font-size: 15px">
+    <option value="" selected disabled>Industry</option>
+    <option value="IT">IT</option>
+    <option value="Sales">Sales</option>
+    <option value="Marketting">Marketting</option>
+    <option value="Business Development">Business Development</option>
+    <option value="Core Engineering">Core Engineering</option>
+    <option value="Media And Environment">Media And Environment</option>
+     <option value="Retail">Retail</option>
+      <option value="Hospitality">Hospitality</option>
+       <option value="Banking And Financial">Banking And Financial</option>
+        <option value="E-Commerce">E-Commerce</option>
+
+
+
+</select>
+              </div>
+            </div>
+          </div>
+        <div class="form-group" style="margin-left: 3em;">
+          <div class='input-group-field'>
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span></span>
+               <select name="job_location" style="width: 150px;font-weight: 300;font-size: 15px">
+  <option value="" selected disabled>Location</option>
+    <option value="Chennai" name="Chennai">Chennai</option>
+    <option value="Bangalore">Bangalore</option>
+    <option value="Mumbai">Mumbai</option>
+    <option value="Delhi">Delhi</option>
+    <option value="Pune">Pune</option>
+    <option value="Noida">Noida</option>
+    <option value="Hyderabad">Hyderabad</option>
+    <option value="Kolkata">Kolkata</option>
+    <option value="Gurgaon">Gurgaon</option>
+</select>
+<!-- <input class= "form-control" type="text" id="dropdownMenu1" placeholder="Location" name="place">-->
+              </div>
+            </div>
+          </div>
+        <div class="form-group"  style="margin-left: 3em;">
+          <div class='input-group-field'>
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-briefcase"></span></span>
+                <select name="job_type" style="width: 150px;font-weight: 300;font-size: 15px">
+  <option value="" selected disabled>Type of Job</option>
+    <option value="Internship">Internship</option>
+    <option value="Project">Project</option>
+    <option value="Fulltime">Fulltime</option>
+    <option value=""></option>
+</select>
+ <!--<input class= "form-control" type="text" id="dropdownMenu1" placeholder="Type of Job" name="">-->
+              </div>
+            </div>
+          </div>
+        <div class="form-group"  style="margin-left: 2em;">
+          <input type="submit" class="btn btn-default" id="submitsearch" value="Submit" style="width: 100px;font-weight: 300;font-size: 14px;text-transform: uppercase;" >
+        </div>
+         </form>
+      </div>
+   <%end%>
+  </div>
+
+
+  <div class="conntainer" style="margin-left: 4em;">
+    <div class="row">
+
+      <div class="col-md-4" style="background-color:#357EC7;padding:3em 0 46em 0;margin-left: 3em;">
+
+        <div id="circle">
+ <%if params[:id].present? %>
+ <div style="display: none">
+ </div>
+ <%else%>
+          <a href=""><img src= "/assets/edit1.png" style="position: absolute; padding:3em 20em;color:white;"></a>
+          <%end%>
+          <img src="/assets/profilephoto.png" caption="upload photo" style="position: absolute;padding: 5.5em">
+          <%if params[:id].present? %>
+ <div style="display: none">
+ </div>
+ <%else%>
+          <p style="padding:9em 3em; font-size: 20px;color: grey">Upload&nbspPhoto</p>
+          <%end%> 
+        </div>
+        <br>
+        <br>
+       <!-- <div style="margin-left: 5em;">
+          <img class="img-circle" src="/assets/fbicon.png" style="background-color: white;width:25px;height:25px;border:5px solid white;">&nbsp
+          <img class="img-circle" src="/assets/twittericon.png" style="background-color:white;width:25px;height:25px;border:5px solid white;"> &nbsp
+          <img class="img-circle" src="/assets/linkedinicon.png" style="background-color:white;width:25px;height:25px;border:5px solid white;">&nbsp
+          <img class="img-circle" src="/assets/googleicon.png" style="background-color:white;width:25px;height:25px;border:5px solid white;">&
+        </div>-->
+        <div class="downloadcv" style="text-align: center;margin-left: 8.5em;padding: 0.5em;"><span class="glyphicon glyphicon-download-alt">&nbspDownload&nbspCV&nbsp</span></div>
+        <section style="margin-left: 0.5em;margin-top: 4em;">
+          <div id="circlee" style="margin-left: 2em;cursor: pointer;" >
+            <div style=" margin-left: 1.75em;"  class="applieddetails" data-id="<%=@student.id%>">
+              <b style="font-size: 28px;color: royalblue;"><%=@applicant.count%></b>
+              <p style="font-size: 10px">Jobs applied</p>
+
+            </div>
+          </div>
+          <div id="circlee" style="margin-left: 2em;">
+            <div style=" margin-left: 1.5em;">
+              <b style="font-size: 28px;margin-left: 0.5em;color: royalblue;">7</b>
+              <p style="font-size: 10px;padding-right: 1.5em;">Shortlisted</p>
+
+            </div>
+          </div>
+          <div id="circlee" style="margin-left: 2em;">
+            <div style=" margin-left: 1.25em;">
+              <b style="font-size: 28px;margin-left: 0.25em;color: royalblue;">18</b>
+              <p style="font-size: 10px">View for the profile</p>
+
+            </div>
+          </div>
+        </section>
+        <div class="video">
+          <img class="img-responsive"  src="/assets/video1.png" >
+        </div>
+        <div class="personaldetails">
+        
+          <h4 style="color: white;"><span class="glyphicon glyphicon-user"></span>&nbsp&nbspPersonal Details
+          <%if params[:id].present? %>
+ <div style="display: none">
+ </div>
+ <%else%>
+ <span "><a href="/job_seeker/edit"><img src="/assets/edit1.png" style="float: right;margin-right:  2em;"></a></span>
+ <%end%>
+ </h4>
+          
+
+          <div class="row">
+            <div class="col-md-6" style="color: white; margin-top: 2em;">
+              <p>DOB  </p>
+              <p>Address</p>
+              <br>
+              <p>phone</p>
+              <p>Mobile</p>
+              <p>Email</p>
+              <p>Linkedin Id</p>
+              <p>Skype Id</p>
+            </div>
+            <div class="col-md-6" style="color: white; margin-top: 2em;" >
+              <p><%=@student.dob %></p>
+              <p><%=@student.address%></p>
+              <p><%=@student.phone_number%></p>
+              <p><%=@studentdetails.mobile_num%></p>
+              <p><%=@studentdetails.email%></p>
+              <p><%=@student.linkedin_link%></p>
+              <p><%=@student.skype_id%></p>
+            </div>
+          </div>
+
+        </div>
+        <div class="jobdetails">
+      
+          <h4 style="color: white;"><span class="glyphicon glyphicon-blackboard"></span>&nbsp&nbspJob Details
+            <%if params[:id].present? %>
+ <div style="display: none">
+ </div>
+ <%else%><span><a href="/job_seeker/edit"><img src="/assets/edit1.png" style="float: right;margin-right:  2em;"></a></span>
+ <%end%>
+
+ </h4>
+         
+          <div class="row">
+            <div class="col-md-6" style="color: white; margin-top: 2em;">
+              <p>Prefered Role</p>
+              <p>prefered Industry</p>
+              <p>prefered Locations</p>
+              <p>Prefered Organisation</p>
+              <p>Last CTC</p>
+              <p>Expected CTC</p>
+
+            </div>
+            <div class="col-md-6" style="color: white; margin-top: 2em;">
+              <p><%=@student.preffered_role%></p>
+              <p><%=@student.prefferd_industry%></p>
+              <p><%=@student.preffered_location%></p>
+              <p><%=@student.preffered_organisation%></p>
+              <p><%=@student.current_salary%></p>
+              <p><%=@student.expected_salary%></p>
+            </div>
+          </div>
+        </div>
+        <div class="skillsets">
+      
+          <h4 style="color: white;"><span class="glyphicon glyphicon-user"></span>&nbsp&nbsp Skill Sets
+            <%if params[:id].present? %>
+ <div style="display: none">
+ </div>
+ <%else%><span "><a href="/job_seeker/edit"><img src="/assets/edit1.png" style="float: right;margin-right:  2em;"></a></span>
+ <%end%>
+ </h4>
+          
+          <div class="row">
+            <div class="col-md-6" style="color: white; margin-top: 1em;">
+              <div>
+                <div class="box">
+                  <p><%=@studentsskill.sill_name%><span>.2</span></p>
+                </div>
+                <div class="round">
+                  <p style="text-align: center;font-size: 12px;padding: 0.25em;"><span class="glyphicon glyphicon-plus"></span></p>
+                </div>
+              </div>
+              <div>
+                <div class="box">
+                  <p><%=@studentsskill.sill_name%><span>.3</span></p>
+                </div>
+                <div class="round">
+                  <p style="text-align: center;font-size: 12px;padding: 0.25em;"><span class="glyphicon glyphicon-plus"></span></p>
+                </div>
+              </div>
+              <div>
+                <div class="box">
+                  <p><%=@studentsskill.sill_name%><span>.4</span></p>
+                </div>
+                <div class="round">
+                  <p style="text-align: center;font-size: 12px;padding: 0.25em;"><span class="glyphicon glyphicon-plus"></span></p>
+                </div>
+              </div>
+              <div>
+                <div class="box">
+                  <p>SelfLearning<span>.2</span></p>
+                </div>
+                <div class="round">
+                  <p style="text-align: center;font-size: 15px;padding: 0.25em;"><span class="glyphicon glyphicon-plus"></span></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6" style="color: white; margin-top: 2em;">
+
+              <div style="margin-top: 2em;">
+                <img src="/assets/thirumaran.png" style="height: 32px;float: left;"><span style="font-size:12px;margin-left: 0.25em">Endorsed by <b>Thirumaran and 1 other Mutual Friend</b></span>
+              </div>
+              <div style="margin-top: 2em;">
+                <img src="/assets/adhisekar.png" style="height: 32px;float: left;"><span style="font-size:12px;margin-left: 0.25em">Endorsed by <b>2 of Abhishekars colleagues at webdefy marketing services</b></span>
+              </div>
+              <div style="margin-top: 2em;">
+                <img src="/assets/pradeep.png" style="height: 32px;float: left;"><span style="font-size:12px;margin-left: 0.25em">Endorsed by <b>3 of Pradeep's colleagues at Netmagic Solutions</b></span>
+              </div>
+              <div style="margin-top: 2em;">
+                <img src="/assets/selvakumar.png" style="height: 32px;float: left;"><span style="font-size:12px;margin-left: 0.25em">Endorsed by <b>Selvakumar and 1 other Mutual Friend</b></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-5" style="margin-left: 2em;">
+        <div class="container">
+          <h2 style="color: black;font-size: 32px;text-transform: uppercase;"><%=@studentdetails.first_name%></h2>
+          <p style="color: black;font-size: 20px;" class="role"><%=@student.preffered_role%>
+           <%if params[:id].present? %>
+ <div style="display: none">
+ </div>
+ <%else%>
+          <span style="margin-left:45%;"><a href="/job_seeker/edit"><img src="/assets/edit1.png"></a></span></p>
+          <%end%>
+          <p style="text-align: left;margin-top: 4em;">
+           <%=@student.profile_description%>
+          </p>
+          <div class="workexperiance">
+
+<% if @studentsexperience.present? %>
+
+<% @studentsexperience.each do |a| %>
+
+<h4><span class="glyphicon glyphicon-briefcase" "></span>&nbsp&nbspWork Experiance (if any)
+ <%if params[:id].present? %>
+ <div style="display: none">
+ </div>
+ <%else%>
+<span style="margin-left:40%;"><a href="/job_seeker/edit"><img src="/assets/edit1.png"></a></span>
+<%end%>
+</h4>
+
+
+<div class="row" style="width:80%;height:100px;">
+
+<div class="col-md-2">
+<%if a.start_date.present?%>
+<p><%=a.start_date.strftime("%Y")%>-<b><%= a.end_date.strftime("%Y") %></b></p>
+<%else%>
+<p>-</p>
+<!-- <p><%=a.start_date%>-<b> <%=a.end_date%></b></p> -->
+<%end%>
+</div>
+
+<div class="col-md-1">
+
+<div id="cir">
+
+
+</div>
+
+<div class="verticalLine">
+
+
+</div>
+
+</div>
+
+<div class="col-md-5" style="height: 100px;">
+
+<h4><b><%=a.organisation_name%>,<%=a.place%></b></h4>
+
+<p><span style="color: blue;"><%=a.designation%> </span><br><%=a.work_description%> </p>
+
+</div>
+
+<div class="col-md-4"></div>
+
+</div>
+
+<%end%>
+
+<%else%>
+
+<p>Nothing is present</p>
+
+
+<%end%>
+ <div>
+      <span id="add" style="cursor: pointer;float: right;font-size: 30px;">+;</span>
+     
+    
+    </div>
+</div>
+
+<div class="educationbackground">
+
+<% if @studentseducation.present? %>
+
+<% @studentseducation.each do |b| %>
+ 
+<h4><span "><img src="/assets/book.png"></span>&nbsp&nbspEducation Background
+<%if params[:id].present? %>
+ <div style="display: none">
+ </div>
+ <%else%>
+ <span style="margin-left:41%;"><a href="/job_seeker/edit"><img src="/assets/edit1.png"></a></span>
+<%end%>
+ </h4>
+
+<div class="row" style="width:80%;height:100px;margin-top: 2em;">
+
+<div class="col-md-2">
+
+<p><%=b.fromdate.strftime("%Y")%>-<b><%= b.todate.strftime("%Y") %></b></p>
+
+</div>
+
+<div class="col-md-1">
+
+<div id="cir">
+
+
+</div>
+
+<div class="verticalLine">
+
+
+</div>
+
+</div>
+
+<div class="col-md-5" style="height: 100px;">
+
+<h4><b><%=b.university%>,<%=b.place%></b></h4>
+
+<p><span style="color: blue;"><%=b.course_name%>,<%=b.graduation%>,<%=b.grade%></span><br>There are many variations of passages of Lorem Ipsum available,but the majority have suffered </p>
+
+</div>
+
+<div class="col-md-4"></div>
+
+</div>
+
+<%end%>
+
+<%else%>
+
+<p>Nothing is present</p>
+
+
+<%end%>
+
+
+</div>
+
+<div class="availablefor">
+
+<% if @studentsavailable.present? %>
+
+<% @studentsavailable.each do |c| %>
+
+<h4><span "><img src="/assets/calender.png"></span>&nbsp&nbspAvailable For
+ <%if params[:id].present? %>
+ <div style="display: none">
+ </div>
+ <%else%>
+<span style="margin-left:49%;"><a href="/job_seeker/edit"><img src="/assets/edit1.png"></a></span>
+<%end%>
+</h4>
+
+<div class="row" style="width:80%;height:60px;margin-top: 3em;margin-left: 2em;">
+
+<div class="col-md-4">
+
+<p>Internship</p>
+
+</div>
+
+<div class="col-md-2">
+
+<p><%=c.internfrom%> </p>
+
+</div>
+
+<div class="col-md-2"">
+
+
+<p><%=c.internto%></p>
+
+</div>
+
+</div>
+
+<div class="row" style="width:80%;height:60px;margin-left: 2em;">
+
+<div class="col-md-4">
+
+<p>Project</p>
+
+</div>
+
+<div class="col-md-2">
+
+<p><%=c.projectfrom%></p>
+
+</div>
+
+<div class="col-md-2" ">
+
+
+<p><%=c.projectto%></p>
+
+</div>
+
+</div>
+
+<div class="row" style="width:80%;height:60px;margin-left: 2em;">
+
+<div class="col-md-4">
+
+<p>Full Time Employment</p>
+
+</div>
+
+<div class="col-md-2">
+
+<p><%=c.fulltimefrom%></p>
+
+</div>
+
+
+</div>
+
+<%end%>
+
+<%else%>
+
+<p>Nothing is present</p>
+
+
+<%end%>
+
+</div>
+
+<div class="languagesknown">
+
+<% if @studentslanguage.present? %>
+
+<% @studentslanguage.each do |d| %>
+
+<h4><span "><img src="/assets/globe.png"></span>&nbsp&nbspLanguages Known
+ <%if params[:id].present? %>
+ <div style="display: none">
+ </div>
+ <%else%><span style="margin-left:45%;"><a href="/job_seeker/edit"><img src="/assets/edit1.png"></a></span><%end%></h4>
+
+<div class="row" style="width:80%;height:60px;margin-top: 3em;margin-left: 2em;">
+
+<div class="col-md-4" style="height:60px;">
+
+<p >English</p>
+
+<p style="margin-top: 2em;">Spanish</p>
+
+<p style="margin-top: 2em;">Scotish</p>
+
+</div>
+
+<div class="col-md-8" style="height:60px;">
+
+<form>
+
+<div class="checkbox">
+
+<label><input type="checkbox" value="Novice" <%if d.english == "Novice" %>checked<% end%>>Novoice</label>
+
+<label><input type="checkbox" value="Intermediary" <%if d.english == "Intermediary" %>checked<% end%>>Intermediary</label>
+
+<label><input type="checkbox" value="Expert" <%if d.english == "Expert"%>checked<% end%>>Expert</label>
+
+</div>
+
+<div class="checkbox" style="margin-top: 2em;">
+
+<label><input type="checkbox" value="Novice" <%if d.spanish == "Novice" %>checked<% end%>>Novoice</label>
+
+<label><input type="checkbox" value="Intermediary" <%if d.spanish == "Intermediary" %>checked<% end%>>Intermediary</label>
+
+<label><input type="checkbox" value="Expert" <%if d.spanish == "Expert"%>checked<% end%>>Expert</label>
+
+</div>
+
+<div class="checkbox" style="margin-top: 2em;">
+
+<label><input type="checkbox" value="Novice" <%if d.scotish == "Novice" %>checked<% end%>>Novoice</label>
+
+<label><input type="checkbox" value="Intermediary" <%if d.scotish == "Intermediary" %>checked<% end%>>Intermediary</label>
+
+<label><input type="checkbox" value="Expert" <%if d.scotish == "Expert"%>checked<% end%>>Expert</label>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+<%end%>
+
+<%else%>
+
+<p>Nothing is present</p>
+
+
+
+<%end%>
+          </div><br><br>
+          <div class="assignments">
+       
+            <h4><span><img src="/assets/list.png"></span>&nbsp&nbspAssignments   
+             <%if params[:id].present? %>
+ <div style="display: none">
+ </div>
+ <%else%><span style="margin-left:48%;"><a href="/job_seeker/edit"><img src="/assets/edit1.png"></a></span> <%end%></h4>
+           
+            <p>Images</p>
+            <img src="/assets/assignments.png">
+            <p>Videos</p>
+            <img class="vidio" src="/assets/video2.png">
+            <img class="vidio" src="/assets/video3.png">
+            <img class="vidio" src="/assets/video4.png"><br>
+            <img class="vidio" src="/assets/video5.png">
+            <img class="vidio" src="/assets/video6.png">
+            <img class="vidio" src="/assets/video7.png">
+<!--<div class="row">
+<p>Images</p>
+<div class="col-md-4">
+<img src="">
+<img src="">
+</div>
+<div class="col-md-4">
+<img src="">
+<img src="">
+</div>
+<div class="col-md-4">
+<img src="">
+<img src="">
+</div>
+</div>-->
+</div>
+
+</div>
+</div>
+<div class="col-md-1">
+  
+</div>
+</div>
+
+</div>
+<footer class="footer-bs">
+  <div class="row">
+    <div class="col-md-4 footer-brand animated fadeInLeft">
+      <h2>About Scot's Hunt</h2>
+      <img src="/assets/scothunt.png" class="pull-left img-responsive">
+      <p>University of west scotland is simply dummy text of the printing and<br> typesetting industry. Lorem Ipsum has been the industry's standard dummy.<br> University of west scotland is simply dummy text of the printing and<br> typesetting industry. Lorem Ipsum has been the industry's standard<br> dummy</p>
+      <p> CopyRight 2017 Scot's Hunt</p>
+    </div>
+    <div class="col-md-3 footer-nav animated fadeInUp">
+      <h2>Quick Links</h2>
+      <div class="col-md-6">
+        <ul class="pages">
+          <li><a href="#">Local jobs</a></li>
+          <li><a href="#">Browse jobs</a></li>
+          <li><a href="#">SuccessStories</a></li>
+          <li><a href="#">Post a Job</a></li>
+          <li><a href="#">Publisher</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="col-md-2 footer-social animated fadeInDown">
+      <h2>Company</h2>
+      <ul>
+        <li><a href="#">Company Directory</a></li>
+        <li><a href="#">Salary estimate</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Employer Login</a></li>
+        <li><a href="#">Include My Jobs</a></li>
+      </ul>
+    </div>
+    <div class="col-md-3 footer-ns animated fadeInRight">
+      <h2>Newsletter</h2>
+      <p>Subscribe to get our latest updates and offers</p>
+      <p>
+        <div class="input-group" style="background-color: transparent;">
+          <input type="text" style="background-color: transparent;border: 1px solid white;"  class="form-control" placeholder="Entrer your email">
+          <span  style="border: 1px solid white;" class="input-group-btn">
+            <button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
+          </span>
+        </div><!-- /input-group -->
+      </p>
+    </div>
+  </div>
+</footer>
+<div id="myModal" class="modal"  role="dialog">
+
+  <%=render :partial=>'appliedmodal'%>
+
+
+</div> 
+
+ 
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>
+      jQuery(document).ready(function($){
+  //var searchstudents = $('#searchstudents');
+
+  var  applieddetails = $('.applieddetails');
+  var shortlist = $('.shake');
+ 
+  applieddetails.on('click',function(event){
+      id=$(this).data("id")
+           event.preventDefault();
+          $.ajax({
+      type : 'GET',
+
+      url : "/job_seeker/applieddetails",
+
+      data :"job_seeker_id="+id,
+      
+      dataType : 'html',
+      
+      success : function(response) {
+      $('#myModal').html(response);
+      var modal = document.getElementById('myModal');
+       modal.style.display = "block";
+
+      }
+
+
+    });
+
+  });
+
+shortlist.on('click',function(event){
+      id=$(this).data("id")
+           event.preventDefault();
+          $.ajax({
+      type : 'GET',
+
+      url : "/recruiter/shortlist",
+
+      data :"job_seekers_id="+id,
+      
+      dataType : 'json',
+      
+      success : function(response) {
+        alert("Shortlisted");
+
+      }
+
+
+    });
+
+  });
+
+
+  $('.phone').click(function() {
+        $(this).find(".hidden").toggleClass('open');
+    });
+});
+
+
+    
+
+</script>
+
+</body>
+</html>

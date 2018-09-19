@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Moderator page</title>
+	     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="moderatorpage.css">
+      <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> 
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+</head>
+<style type="text/css">
+	.dashboard {
+  position: relative;
+  background: skyblue;
+  width: 40px;
+  height: 40px;
+  color: white;
+  border-radius: 50%;
+  margin-left: 1em;
+
+}
+.dashboard:after {
+  content: '...';
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  font-size: 15px; 
+  letter-spacing: 4px;
+ 
+}
+input[type="text"]
+ {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+  color: white;
+  width: 30%;
+   margin: 8px 0;
+   
+
+}
+
+</style>
+<body style="overflow-x: hidden;">
+<div class="row" >
+	<div class="col-md-2" style="background-color:#1a99d5; padding-bottom: 87%">
+	<div style="padding: 1em;">
+	<img src="/assets/scot'shuntlogo.png" >
+	</div>
+	<hr>
+	<div>
+	<img src="/assets/girl.png" class="img-circle " style="width:50px;height: 50px;">
+	<span style="color: white">&nbsp&nbsp&nbsp Liza Thomas<span style="color: white">&nbsp&nbsp&nbsp &#9660;</span></span>
+	
+	</div>
+	<hr>
+	<div>
+		<center><button class="btn-default" style="border-radius: 10px;padding:0.5em 4em;">Dashboard</button></center>
+		<div>
+			<img src="/assets/jobseekercount.png" style="padding:  1em;"><span style="color: white;">   job seekers</span><span style="border-radius: 100px;border:2px solid skyblue;color: blue;background-color: white;padding: 0.5em;margin-left: 1em;">125</span><br>
+			<img src="/assets/recruitercount.png" style="padding:  1em;"><span style="color: white;">  recruiters</span><span style="border-radius: 100px;border:2px solid skyblue;color: blue;background-color: white;padding: 0.5em;margin-left: 2.5em;">31</span><br>
+			<img src="/assets/jobsposted(1).png" style="padding:  1em;"><span style="color: white;"> jobs posted</span><span style="border-radius: 100px;border:2px solid skyblue;color: blue;background-color: white;padding: 0.5em;margin-left: 1.25em;">78</span><br>
+			<img src="/assets/settings.png" style="padding:  1em;"><span style="color: white;"> & settings</span><br>
+				<img src="/assets/controlpanel.png" style="padding:  1em;"><span style="color: white;"> &nbsp&nbsp controll panel</span>
+		</div>
+	</div>
+	</div>
+	<div class="col-md-10" style="background-color: lightgrey;padding: 0;padding-bottom: 8em;">
+	<div style="background-color: white;"">
+
+	
+	<p class="dashboard" style="padding: 0.1em;"></p>
+	<span style="color: black;margin-left: 4em;top: 3em;">Dashboard</span>
+	<span style="margin-left: 50em;"><input type="text" name="" style="width:10%;"><span class="glyphicon glyphicon-search" style="border-radius: 100px;background-color: skyblue;padding: 0.5em;"></span>&nbsp&nbsp&nbsp<span><img src="/assets/message.png"></span>&nbsp&nbsp&nbsp<span style="font-size: 18px;">&#9888;</span>&nbsp&nbsp&nbsp<span class="glyphicon glyphicon-bell"></span></span>
+	
+		
+	
+	</div>
+
+	<div class="row" style="margin-top: 3em;margin-left: 2em;" >
+		<div class="col-md-2" style="background-color: white;">
+			<img src="/assets/noofjobseekers.png" style="position: absolute;background-color: orange;border-radius: 10px;border: 1px solid white;padding: 1em;float: left;left:0.5em;top:-2em">
+			<p style="text-align: right;font-size: 30px;">125</p>
+			<hr>
+			<center>No of job seekers</center>
+		</div>
+			<div class="col-md-1">
+			
+		</div>
+		<div class="col-md-2" style="background-color: white">
+		<img src="/assets/noofuniversities.png" style="position: absolute;background-color: red;border-radius: 10px;border: 1px solid white;padding: 1em;float: left;left:0.5em;top:-2em">
+			<p style="text-align: right;font-size: 30px;">17</p>
+			<hr>
+			<center>No of Universities</center>
+		</div>
+			<div class="col-md-1">
+			
+		</div>
+		<div class="col-md-2" style="background-color: white">
+			<img src="/assets/noofrecruiters.png" style="position: absolute;background-color: lightgreen;border-radius: 10px;border: 1px solid white;padding: 1em;float: left;left:0.5em;top:-2em">
+			<p style="text-align: right;font-size: 30px;">31</p>
+			<hr>
+			<center>No of recruiters</center>
+		</div>
+	<div class="col-md-1">
+			
+		</div>
+	<div class="col-md-2" style="background-color: white">
+			<img src="/assets/nooforganisations.png" style="position: absolute;background-color: skyblue;border-radius: 10px;border: 1px solid white;padding: 1em;float: left;left:0.5em;top:-2em">
+			<p style="text-align: right;font-size: 30px;">22</p>
+			<hr>
+			<center>No of organisations</center>
+		</div>
+	</div>
+
+
+	<div class="row" style="margin-top: 5em;margin-left: 2em;">
+	<div class="col-md-5" style="background-color: white">
+	<div style="position: absolute;background-color: skyblue;border-radius: 10px;border: 1px solid white;padding: 1.25em;float: left;left:0.5em;top:-2em">
+		<img src="/assets/jobseekers.png" >
+		<img src="/assets/plus.png" style="position:absolute;left: 3.25em;top:1em;width:20px;height: 20px;">
+		</div><span style="margin-left: 5em;">New JobSeekers</span><span style="margin-left: 6em;"><input type="text" name="" style="color: black;">
+		<span class="glyphicon glyphicon-search" style="border-radius: 100px;background-color: skyblue;padding: 0.5em;"></span></span><br><br>
+		<div class="row" style="background-color: #0471d0">
+		<div class="col-md-1">
+			
+		</div>
+		<div class="col-md-2">
+			<b style="font-size: 15px;color: white">Name</b>
+		</div>
+		<div class="col-md-3">
+			<b style="font-size: 15px;color: white">University</b>
+		</div>
+		<div class="col-md-2">
+			<b style="font-size: 15px;color: white">Course</b>
+		</div>
+		<div class="col-md-4">
+			<b style="font-size: 15px;color: white">Status</b>
+		</div>
+		</div>
+		
+			<form>
+				<p style="left: 0;"><label><input type="checkbox" id="checkAll"/> Select all</label> <span style="float: right;margin-top: 0.5em;"><button class="btn-success" style="width: 65px;height: 25px;">Approve</button>&nbsp&nbsp<button class="btn-danger" style="width: 65px;height: 25px;">Reject</button></span></p>
+		
+		<hr>
+		<div class="noofjobseekers" style="height: 200px;overflow: auto;overflow-x:hidden; ">
+		<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="checkall">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-3">
+				sathyabama university
+			</div>
+			<div class="col-md-2">
+				BE.,Csc
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+		<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="checkall">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-3">
+				sathyabama university
+			</div>
+			<div class="col-md-2">
+				BE.,Csc
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+		<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="checkall">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-3">
+				sathyabama university
+			</div>
+			<div class="col-md-2">
+				BE.,Csc
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+			<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="checkall">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-3">
+				sathyabama university
+			</div>
+			<div class="col-md-2">
+				BE.,Csc
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+		<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="checkall">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-3">
+				sathyabama university
+			</div>
+			<div class="col-md-2">
+				BE.,Csc
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+			<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="checkall">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-3">
+				sathyabama university
+			</div>
+			<div class="col-md-2">
+				BE.,Csc
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+			<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="checkall">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-3">
+				sathyabama university
+			</div>
+			<div class="col-md-2">
+				BE.,Csc
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+		</form>
+		</div>
+		</div>
+	
+	<div class="col-md-1">
+		
+	</div>
+	<div class="col-md-5" style="background-color: white">
+
+	<div style="position: absolute;background-color: skyblue;border-radius: 10px;border: 1px solid white;padding: 1.5em;float: left;left:0.5em;top:-2em">
+		<img src="/assets/recruiters.png" >
+		<img src="/assets/plus.png" style="position:absolute;left: 4.25em;top:1em;width:20px;height: 20px;">
+
+		</div><span style="margin-left: 6em;">New recruiters</span><span style="margin-left: 6em;"><input type="text" name="" style="color: black;">
+		<span class="glyphicon glyphicon-search" style="border-radius: 100px;background-color: skyblue;padding: 0.5em;"></span></span><br><br>
+	<div class="row" style="background-color:#0471d0">
+		<div class="col-md-1">
+			
+		</div>
+		<div class="col-md-2">
+			<b style="font-size: 15px;color: white">Name</b>
+		</div>
+		<div class="col-md-3">
+			<b style="font-size: 15px;color: white">Organisation</b>
+		</div>
+		<div class="col-md-3">
+			<b style="font-size: 15px;color: white">Designation</b>
+		</div>
+		<div class="col-md-3">
+			<b style="font-size: 15px;color: white">Status</b>
+		</div>
+		</div>
+		
+			<form>
+				<p style="left: 0;"><label><input type="checkbox" id="selectall"/> Select all</label> <span style="float: right;margin-top: 0.5em;"><button class="btn-success" style="width: 65px;height: 25px;">Approve</button>&nbsp&nbsp<button class="btn-danger" style="width: 65px;height: 25px;">Reject</button></span></p>
+		
+		<hr>
+		<div class="noofjobseekers" style="height: 200px;overflow: auto;overflow-x:hidden; ">
+		<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="select">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-3">
+				Wipro
+			</div>
+			<div class="col-md-2">
+				developer
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+		<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="select">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-3">
+				Bally technologies
+			</div>
+			<div class="col-md-2">
+				Networking
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+		<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="select">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-3">
+				IBM
+			</div>
+			<div class="col-md-2">
+				.net developer
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+			<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="select">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-3">
+				sathyabama university
+			</div>
+			<div class="col-md-2">
+				BE.,Csc
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+		<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="select">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-3">
+				sathyabama university
+			</div>
+			<div class="col-md-2">
+				BE.,Csc
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+			<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="select">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-3">
+				sathyabama university
+			</div>
+			<div class="col-md-2">
+				BE.,Csc
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+			<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="select">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-3">
+				sathyabama university
+			</div>
+			<div class="col-md-2">
+				BE.,Csc
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+		</form>
+		</div>
+
+
+
+	</div>
+
+
+	</div>
+		<div class="row" style="background-color: white;margin-top: 3em;margin-left:2em;width: 90%;">
+		<div class="col-md-12">
+
+	<div style="position: absolute;background-color: skyblue;border-radius: 10px;border: 1px solid white;padding: 0.5em;float: left;left:1em;top:-2em">
+		<img src="/assets/jobsposted.png" >
+
+
+		</div><span style="margin-left: 6em;">Jobs Posted(till date)</span><span style="margin-left: 30em;"><input type="text" name="" style="color: black;">
+		<span class="glyphicon glyphicon-search" style="border-radius: 100px;background-color: skyblue;padding: 0.5em;"></span></span><br><br>
+
+		<div class="row" style="background-color: #0471d0;padding: 0.5em;">
+		<div class="col-md-1">
+			
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<b style="font-size: 15px;color: white">Job Name</b>
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<b style="font-size: 15px;color: white">Recruiter Name</b>
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<b style="font-size: 15px;color: white">Organisation</b>
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<b style="font-size: 15px;color: white">Job Location</b>
+		</div>
+		<div class="col-md-3" style="text-align: center;">
+		<b style="font-size: 15px;color: white">Status</b>
+		</div>
+			
+		</div>
+			<form>
+				<p style="left: 0;padding:0 1em;"><label><input type="checkbox" id="select"/> Select all</label> <span style="float: right;margin-top: 0.5em;"><button class="btn-success" style="width: 65px;height: 25px;">Approve</button>&nbsp&nbsp<button class="btn-danger" style="width: 65px;height: 25px;">Reject</button></span></p>
+		
+		<hr>
+		<div style="height: 150px;overflow: auto;overflow-x:hidden; ">
+		<div class="row">
+		<div class="col-md-1" style="text-align: center;">
+			<input type="checkbox" name="" class="select1">
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<p>Senior Web developer</p>
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<p>Raj Kumar</p>
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<p>LYCA</p>
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<p>chennai</p>
+		</div>
+		<div class="col-md-3" style="text-align: center;">
+			<button class="btn-success" style="width: 65px;height: 25px;">Approve</button>&nbsp&nbsp<button class="btn-danger" style="width: 65px;height: 25px;">Reject</button>
+		</div>
+			
+		</div>
+		<div class="row">
+		<div class="col-md-1" style="text-align: center;">
+			<input type="checkbox" name="" class="select1">
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<p>Senior Web developer</p>
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<p>Raj Kumar</p>
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<p>LYCA</p>
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<p>chennai</p>
+		</div>
+		<div class="col-md-3" style="text-align: center;">
+			<button class="btn-success" style="width: 65px;height: 25px;">Approve</button>&nbsp&nbsp<button class="btn-danger" style="width: 65px;height: 25px;">Reject</button>
+		</div>
+			
+		</div>
+		<div class="row">
+		<div class="col-md-1" style="text-align: center;">
+			<input type="checkbox" name="" class="select1">
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<p>Senior Web developer</p>
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<p>Raj Kumar</p>
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<p>LYCA</p>
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<p>chennai</p>
+		</div>
+		<div class="col-md-3" style="text-align: center;">
+			<button class="btn-success" style="width: 65px;height: 25px;">Approve</button>&nbsp&nbsp<button class="btn-danger" style="width: 65px;height: 25px;">Reject</button>
+		</div>
+			
+		</div>
+		<div class="row">
+		<div class="col-md-1" style="text-align: center;">
+			<input type="checkbox" name="" class="select1">
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<p>Senior Web developer</p>
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<p>Raj Kumar</p>
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<p>LYCA</p>
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<p>chennai</p>
+		</div>
+		<div class="col-md-3" style="text-align: center;">
+			<button class="btn-success" style="width: 65px;height: 25px;">Approve</button>&nbsp&nbsp<button class="btn-danger" style="width: 65px;height: 25px;">Reject</button>
+		</div>
+			
+		</div>
+		<div class="row">
+		<div class="col-md-1" style="text-align: center;">
+			<input type="checkbox" name="" class="select1">
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<p>Senior Web developer</p>
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<p>Raj Kumar</p>
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<p>LYCA</p>
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<p>chennai</p>
+		</div>
+		<div class="col-md-3" style="text-align: center;">
+			<button class="btn-success" style="width: 65px;height: 25px;">Approve</button>&nbsp&nbsp<button class="btn-danger" style="width: 65px;height: 25px;">Reject</button>
+		</div>
+			
+		</div>
+		<div class="row">
+		<div class="col-md-1" style="text-align: center;">
+			<input type="checkbox" name="" class="select1">
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<p>Senior Web developer</p>
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<p>Raj Kumar</p>
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<p>LYCA</p>
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<p>chennai</p>
+		</div>
+		<div class="col-md-3" style="text-align: center;">
+			<button class="btn-success" style="width: 65px;height: 25px;">Approve</button>&nbsp&nbsp<button class="btn-danger" style="width: 65px;height: 25px;">Reject</button>
+		</div>
+			
+		</div>
+		</div>
+		</form>
+
+</div>
+		</div>
+<div class="row" style="margin-top: 5em;margin-left: 2em;">
+	<div class="col-md-5" style="background-color: white">
+	<div style="position: absolute;background-color: skyblue;border-radius: 10px;border: 1px solid white;padding: 0.5em;float: left;left:0.5em;top:-2em">
+		<img src="/assets/monitor.png" >
+		<img src="/assets/jobseekermonitor.png" style="position:absolute;left: 1.60em;top:1em;width:20px;height: 20px;">
+		</div><span style="margin-left: 5em;">Monitor Job Seeker</span><span style="margin-left: 4em;"><input type="text" name="" style="color: black;">
+		<span class="glyphicon glyphicon-search" style="border-radius: 100px;background-color: skyblue;padding: 0.5em;"></span></span><br><br>
+		<div class="row" style="background-color:#0471d0">
+		<div class="col-md-1">
+			
+		</div>
+		<div class="col-md-2"  style="text-align: center;">
+			<b style="font-size: 15px;color: white">Name</b>
+		</div>
+		<div class="col-md-3" style="text-align: center;">
+			<b style="font-size: 15px;color: white">Preffered&nbspRole</b>
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<b style="font-size: 15px;color: white">Email&nbspId</b>
+		</div>
+		<div class="col-md-4" style="text-align: center;">
+			<b style="font-size: 15px;color: white">Status</b>
+		</div>
+		</div>
+		
+			<form>
+				<p style="left: 0;"><label><input type="checkbox" id="CheckAll"/> Select all</label> <span style="float: right;margin-top: 0.5em;"><button class="btn-success" style="width: 65px;height: 25px;">Approve</button>&nbsp&nbsp<button class="btn-danger" style="width: 65px;height: 25px;">Reject</button></span></p>
+		
+		<hr>
+		<div class="noofjobseekers" style="height: 220px;overflow: auto;overflow-x:hidden; ">
+		<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="checkalll">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-2">
+				Technical Support
+			</div>
+			<div class="col-md-3">
+				selva@gmail.com
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+		<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="checkalll">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-2">
+				Technical Support
+			</div>
+			<div class="col-md-3">
+				selva@gmail.com
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+	<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="checkalll">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-2">
+				Technical Support
+			</div>
+			<div class="col-md-3">
+				selva@gmail.com
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+		<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="checkalll">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-2">
+				Technical Support
+			</div>
+			<div class="col-md-3">
+				selva@gmail.com
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+	<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="checkalll">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-2">
+				Technical Support
+			</div>
+			<div class="col-md-3">
+				selva@gmail.com
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+	<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="checkalll>
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-2">
+				Technical Support
+			</div>
+			<div class="col-md-3">
+				selva@gmail.com
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+		<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="checkalll">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-2">
+				Technical Support
+			</div>
+			<div class="col-md-3">
+				selva@gmail.com
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+		</form>
+		</div>
+		</div>
+	
+	<div class="col-md-1">
+		
+	</div>
+	<div class="col-md-5" style="background-color: white">
+
+	<div style="position: absolute;background-color: skyblue;border-radius: 10px;border: 1px solid white;padding: 0.5em;float: left;left:0.5em;top:-2em">
+		<img src="/assets/monitor.png" >
+		<img src="/assets/recruitermonitor.png" style="position:absolute;left: 1.60em;top:1em;width:20px;height: 20px;">
+
+		</div><span style="margin-left: 5em;">Monitor Recruiters</span><span style="margin-left: 5em;"><input type="text" name="" style="color: black;">
+		<span class="glyphicon glyphicon-search" style="border-radius: 100px;background-color: skyblue;padding: 0.5em;"></span></span><br><br>
+	<div class="row" style="background-color:#0471d0">
+		<div class="col-md-1">
+			
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<b style="font-size: 15px;color: white">Name</b>
+		</div>
+		<div class="col-md-3" style="text-align: center;">
+			<b style="font-size: 15px;color: white">Organisation</b>
+		</div>
+		<div class="col-md-2" style="text-align: center;">
+			<b style="font-size: 15px;color: white">No of jobs&nbspPosted</b>
+		</div>
+		<div class="col-md-4" style="text-align: center;">
+			<b style="font-size: 15px;color: white">Status</b>
+		</div>
+		</div>
+		
+			<form>
+				<p style="left: 0;"><label><input type="checkbox" id="selectalll"/> Select all</label> <span style="float: right;margin-top: 0.5em;"><button class="btn-success" style="width: 65px;height: 25px;">Approve</button>&nbsp&nbsp<button class="btn-danger" style="width: 65px;height: 25px;">Reject</button></span></p>
+		
+		<hr>
+		<div class="noofjobseekers" style="height: 200px;overflow: auto;overflow-x:hidden; ">
+		<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="select2">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-3">
+				Wipro
+			</div>
+			<div class="col-md-2">
+			1
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+		<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="select2">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-3">
+				Bally technologies
+			</div>
+			<div class="col-md-2">
+				10
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+		<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="select2">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-3">
+				Bally technologies
+			</div>
+			<div class="col-md-2">
+				10
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+		<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="select2">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-3">
+				Bally technologies
+			</div>
+			<div class="col-md-2">
+				10
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+	<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="select2">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-3">
+				Bally technologies
+			</div>
+			<div class="col-md-2">
+				10
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+		<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="select2">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-3">
+				Bally technologies
+			</div>
+			<div class="col-md-2">
+				10
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+		<div class="row">
+	<div class="col-md-1">
+		<input type="checkbox" name="" class="select2">
+	</div>
+			<div class="col-md-2">
+					<p>selva kumar</p>
+			</div>
+			<div class="col-md-3">
+				Bally technologies
+			</div>
+			<div class="col-md-2">
+				10
+			</div>
+			<div class="col-md-4">
+				<p><button class="btn-success" style="width: 50px;font-size: 10px;">approve</button>&nbsp&nbsp<button style="width: 50px;font-size: 10px;" class="btn-danger">reject</button></p>
+			</div>
+		</div>
+		</form>
+		</div>
+
+
+
+	</div>
+
+
+	</div>
+
+</div>
+<script>
+	$("#checkAll").change(function () {
+    $(".checkall").prop('checked', $(this).prop("checked"));
+});
+	$("#selectall").change(function () {
+    $(".select").prop('checked', $(this).prop("checked"));
+});
+		$("#select").change(function () {
+    $(".select1").prop('checked', $(this).prop("checked"));
+});
+		$("#selectalll").change(function () {
+    $(".select2").prop('checked', $(this).prop("checked"));
+});
+			$("#CheckAll").change(function () {
+    $(".checkalll").prop('checked', $(this).prop("checked"));
+});
+</script>
+</body>
+</html>

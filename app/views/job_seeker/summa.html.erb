@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>studentprofile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">   
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!--<link rel="stylesheet" href="studentprofile.css">-->
+  <style>
+    body{
+  overflow-x: hidden;
+}
+#one{
+       background:linear-gradient(0deg,rgba(20,20,20,0.75),rgba(20,20,20,0.75)),url("/assets/studentprofilebg.png");
+      background-size: cover;
+      width: 100%;
+        color: white;
+  
+  padding: 8em 0;
+}
+.logoutbtn{
+  float:right;
+  margin: 1em;
+  padding:0 0.5em;
+  background-color: transparent;
+  border-radius: 10px;
+  border:1px solid white;
+  color: white;
+}
+.logoutbtn a:hover{
+text-decoration: none;
+color: white;
+
+}
+
+input[type="text"],
+select.form-control {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+  color: white;
+
+}
+
+input[type="text"]:focus,
+select.form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.input-group-addon{
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+  color: white;
+
+}
+
+.input-group:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+ #circle {
+      width: 250px;
+      height: 250px;
+      -webkit-border-radius: 150px;
+      -moz-border-radius: 150px;
+      border-radius: 150px;
+      background: #2C2A2A;
+      margin-left: 5em;
+      border:solid white 5px;
+    }
+    .downloadcv{
+      color: white;
+      background: transparent;
+      border: 1px solid white;
+  border-radius: 30px;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+ 
+width:33%;
+
+margin-left: 1em;
+  position: absolute;
+  padding: 0.25em;
+    }
+     #circlee {
+      width: 100px;
+      height: 100px;
+      -webkit-border-radius: 500px;
+      -moz-border-radius: 500px;
+      border-radius: 500px;
+      background: white;
+float: left;
+    margin: 2em 0.25em;
+      border:10px solid lightblue ;
+      
+     
+    }
+    .video{
+      margin-top: 6em;
+      margin-left: 5em;
+    }
+    .personaldetails{
+      margin-top: 4em;
+      margin-left: 2em;
+    }
+     .jobdetails{
+      margin-top: 4em;
+      margin-left: 2em;
+    }
+    .skillsets{
+    margin-top: 4em;
+      margin-left: 2em;
+    }
+.box{
+color: white;
+background-color:blue;
+width:absolute;
+padding:0 0.5em;
+border-radius: 5px;
+font-size: 16px;
+float: left;
+height: 25px;
+margin-top: 3em;
+
+
+  
+ }
+  .round{
+color:#357EC7;;
+border-radius: 500px;
+-moz-border-radius: 500px;
+-webkit-border-radius: 500px;
+
+background-color:white;
+width:12%;
+height: 22px;
+float: left;
+margin-left: 0.5em;
+margin-top: 3em;
+
+
+font-family: 'Lato', sans-serif;
+ }
+ .workexperiance{
+  margin-top: 5em;
+ }
+.verticalLine {
+  border-left: 1px solid black;
+  height: 70px;
+  margin-left: 0.25em;
+}
+  #cir{
+      width: 10px;
+      height: 10px;
+      -webkit-border-radius: 25px;
+      -moz-border-radius: 25px;
+      border-radius: 25px;
+      background: black;
+    }
+    .availablefor{
+      margin-top: 4em;
+    }
+     label{
+      margin-left: 1em;
+    }
+    .assignments{
+      margin-top: 5em;
+      margin-left: 2em;
+    }
+    .vidio{
+           margin: 0.25em;
+
+    }
+      .footer-bs {
+    background-color: #3c3d41;
+  padding: 40px 20px;   
+  color: rgba(255,255,255,1.00);
+  margin-top: 3em;
+  
+
+}
+.footer-bs .footer-brand, .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { padding:10px 20px; }
+.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-color: transparent; }
+.footer-bs .footer-brand h2 { margin:0px 0px 10px; }
+.footer-bs .footer-brand p { font-size:15px; color:rgba(255,255,255,0.70); }
+
+.footer-bs .footer-nav ul.pages { list-style:none; padding:0px; }
+.footer-bs .footer-nav ul.pages li { padding:5px 0px;}
+.footer-bs .footer-nav ul.pages a { color:rgba(255,255,255,0.75); }
+.footer-bs .footer-nav ul.pages a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+.footer-bs .footer-nav h4 {
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom:10px;
+}
+
+
+
+.footer-bs .footer-social ul { list-style:none; padding:0px; }
+.footer-bs .footer-social h4 {
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+.footer-bs .footer-social li { padding:5px 4px;}
+.footer-bs .footer-social a { color:rgba(255,255,255,0.75);}
+.footer-bs .footer-social a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+
+.footer-bs .footer-ns h4 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom:10px;
+}
+.footer-bs .footer-ns p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+@media (min-width: 768px) {
+  .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-left:solid 1px rgba(255,255,255,0.10); }
+}
+  </style>
+</head>
+<body>
+
+  <header >
+    <a class="navbar-brand" href="/home/index"><img style="height:30px;width:200px; padding-left: 2em" src="/assets/scot'shuntlogo.png"></a>
+    <a href="/logout" class="logoutbtn" style="text-decoration: none;"><span class="glyphicon glyphicon-user"></span> Logout</a>
+  </header>
+  <div class="container" id="one">
+    <div class="container" style="padding-left: 8em;" id="searchjob">   
+      <h2 >Find your Job &nbsp&nbsp<span class="glyphicon glyphicon-search" style="color: white;"></span></h2>
+      <form class="form-inline" method="get" action="/job_listing/job_listing" style="padding-top: 1em;">
+
+        <div class="form-group">
+          <div class='input-group-field'>
+            <div class="dropdown">
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-stats"></span></span>
+                <input class= "form-control" type="text" id="dropdownMenu1" placeholder="Industry" name="job_category">
+                <span  class="dropdown-toggle input-group-addon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ><span class="glyphicon glyphicon-triangle-bottom"></span></span>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group" style="margin-left: 1em;">
+          <div class='input-group-field'>
+            <div class="dropdown">
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span></span>
+                <input class= "form-control" type="text" id="dropdownMenu1" placeholder="Location" name="job_location">
+                <span  class="dropdown-toggle input-group-addon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ><span class="glyphicon glyphicon-triangle-bottom"></span></span>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group"  style="margin-left: 1em;">
+          <div class='input-group-field'>
+            <div class="dropdown">
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-briefcase"></span></span>
+                <input class= "form-control" type="text" id="dropdownMenu1" placeholder="Type of Job"  name="job_type">
+                <span class="dropdown-toggle input-group-addon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ><span class="glyphicon glyphicon-triangle-bottom"></span></span>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group"  style="margin-left: 1em;">
+          <input type="submit" class="btn btn-default" id="submitsearch" value="Submit" >
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+  <div class="conntainer">
+    <div class="row">
+
+      <div class="col-md-4" style="background-color:#357EC7;padding:3em 0 46em 0;margin-left: 3em;">
+
+        <div id="circle">
+
+          <a href="/job_seeker/edit"><img src= "/assets/edit1.png" style="position: absolute; padding:3em 20em;color:white;"></a>
+          <img src="/assets/profilephoto.png" caption="upload photo" style="position: absolute;padding: 5.5em">
+          <p style="padding:9em 3em; font-size: 20px;color: grey">Upload Photo</p>
+        </div>
+        <br>
+        <br>
+        <div style="margin-left: 5em;">
+          <img class="img-circle" src="/assets/fbicon.png" style="background-color: white;width:25px;height:25px;border:5px solid white;">&nbsp
+          <img class="img-circle" src="/assets/twittericon.png" style="background-color:white;width:25px;height:25px;border:5px solid white;"> &nbsp
+          <img class="img-circle" src="/assets/linkedinicon.png" style="background-color:white;width:25px;height:25px;border:5px solid white;">&nbsp
+          <img class="img-circle" src="/assets/googleicon.png" style="background-color:white;width:25px;height:25px;border:5px solid white;">&nbsp<span class="downloadcv"><span class="glyphicon glyphicon-download-alt">&nbspDownload CV</span></span>
+        </div>
+        <section style="margin-left: 0.5em;margin-top: 4em;">
+          <div id="circlee">
+            <div style=" margin-left: 1.75em;">
+              <b style="font-size: 28px;color: royalblue;">15</b>
+              <p style="font-size: 10px">Jobs applied</p>
+
+            </div>
+          </div>
+          <div id="circlee">
+            <div style=" margin-left: 1.25em;">
+              <b style="font-size: 28px;margin-left: 0.25em;color: royalblue;">10</b>
+              <p style="font-size: 10px">No of response's</p>
+
+            </div>
+          </div>
+          <div id="circlee">
+            <div style=" margin-left: 1.5em;">
+              <b style="font-size: 28px;margin-left: 0.5em;color: royalblue;">7</b>
+              <p style="font-size: 10px">Status of applications</p>
+
+            </div>
+          </div>
+          <div id="circlee">
+            <div style=" margin-left: 1.25em;">
+              <b style="font-size: 28px;margin-left: 0.25em;color: royalblue;">18</b>
+              <p style="font-size: 10px">View for the profile</p>
+
+            </div>
+          </div>
+        </section>
+        <div class="video">
+          <img class="img-responsive"  src="/assets/video1.png" >
+        </div>
+        <div class="personaldetails">
+          <h4 style="color: white;"><span class="glyphicon glyphicon-user"></span>&nbsp&nbspPersonal Details<span "><a href="/job_seeker/edit"><img src="/assets/edit1.png" style="float: right;margin-right:  2em;"></a></span></h4>
+
+          <div class="row">
+            <div class="col-md-6" style="color: white; margin-top: 2em;">
+              <p>DOB  </p>
+              <p>Address</p>
+              <p>phone</p>
+              <p>Mobile</p>
+              <p>Email</p>
+              <p>Linkedin Id</p>
+              <p>Skype Id</p>
+            </div>
+            <div class="col-md-6" style="color: white; margin-top: 2em;" >
+              <p><%=@student.dob %></p>
+              <p>-</p>
+              <p>-</p>
+              <p><%=@studentdetails.mobile_num%></p>
+              <p><%=@studentdetails.email%></p>
+              <p><%=@student.linkedin_link%></p>
+              <p><%=@student.skype_id%></p>
+            </div>
+          </div>
+
+        </div>
+        <div class="jobdetails">
+          <h4 style="color: white;"><span class="glyphicon glyphicon-blackboard"></span>&nbsp&nbspJob Details<span "><a href="/job_seeker/edit"><img src="/assets/edit1.png" style="float: right;margin-right:  2em;"></a></span></h4>
+          <div class="row">
+            <div class="col-md-6" style="color: white; margin-top: 2em;">
+              <p>Prefered Role</p>
+              <p>prefered Industry</p>
+              <p>prefered Locations</p>
+              <p>Prefered Organisation</p>
+              <p>Last CTC</p>
+              <p>Expected CTC</p>
+
+            </div>
+            <div class="col-md-6" style="color: white; margin-top: 2em;">
+              <p><%=@student.preffered_role%></p>
+              <p><%=@student.prefferd_industry%></p>
+              <p><%=@student.preffered_location%></p>
+              <p><%=@student.preffered_organisation%></p>
+              <p><%=@student.current_salary%></p>
+              <p><%=@student.expected_salary%></p>
+            </div>
+          </div>
+        </div>
+        <div class="skillsets">
+          <h4 style="color: white;"><span class="glyphicon glyphicon-user"></span>&nbsp&nbsp Skill Sets<span "><a href="/job_seeker/edit"><img src="/assets/edit1.png" style="float: right;margin-right:  2em;"></a></span></h4>
+          <div class="row">
+            <div class="col-md-6" style="color: white; margin-top: 1em;">
+              <div>
+                <div class="box">
+                  <p><%=@studentsskill.sill_name%><span>.2</span></p>
+                </div>
+                <div class="round">
+                  <p style="text-align: center;font-size: 12px;padding: 0.25em;"><span class="glyphicon glyphicon-plus"></span></p>
+                </div>
+              </div>
+              <div>
+                <div class="box">
+                  <p><%=@studentsskill.sill_name%><span>.3</span></p>
+                </div>
+                <div class="round">
+                  <p style="text-align: center;font-size: 12px;padding: 0.25em;"><span class="glyphicon glyphicon-plus"></span></p>
+                </div>
+              </div>
+              <div>
+                <div class="box">
+                  <p><%=@studentsskill.sill_name%><span>.4</span></p>
+                </div>
+                <div class="round">
+                  <p style="text-align: center;font-size: 12px;padding: 0.25em;"><span class="glyphicon glyphicon-plus"></span></p>
+                </div>
+              </div>
+              <div>
+                <div class="box">
+                  <p>SelfLearning<span>.2</span></p>
+                </div>
+                <div class="round">
+                  <p style="text-align: center;font-size: 15px;padding: 0.25em;"><span class="glyphicon glyphicon-plus"></span></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6" style="color: white; margin-top: 2em;">
+
+              <div style="margin-top: 2em;">
+                <img src="/assets/thirumaran.png" style="height: 32px;float: left;"><span style="font-size:12px;margin-left: 0.25em">Endorsed by <b>Thirumaran and 1 other Mutual Friend</b></span>
+              </div>
+              <div style="margin-top: 2em;">
+                <img src="/assets/adhisekar.png" style="height: 32px;float: left;"><span style="font-size:12px;margin-left: 0.25em">Endorsed by <b>2 of Abhishekars colleagues at webdefy marketing services</b></span>
+              </div>
+              <div style="margin-top: 2em;">
+                <img src="/assets/pradeep.png" style="height: 32px;float: left;"><span style="font-size:12px;margin-left: 0.25em">Endorsed by <b>3 of Pradeep's colleagues at Netmagic Solutions</b></span>
+              </div>
+              <div style="margin-top: 2em;">
+                <img src="/assets/selvakumar.png" style="height: 32px;float: left;"><span style="font-size:12px;margin-left: 0.25em">Endorsed by <b>Selvakumar and 1 other Mutual Friend</b></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-6">
+        <div class="container">
+          <h2 style="color: black;font-size: 35px;"><b><%=@studentdetails.first_name%></b></h2>
+          <p style="color: black;font-size: 20px;"><%=@student.preffered_role%><span style="margin-left:58%;"><a href="/job_seeker/edit"><img src="/assets/edit1.png"></a></span></p>
+          <p style="text-align: left;margin-top: 4em;">
+           <%=@student.profile_description%>
+          </p>
+          <div class="workexperiance">
+            <h4><span class="glyphicon glyphicon-briefcase" "></span>&nbsp&nbspWork Experiance (if any)<span style="margin-left:45%;"><a href="/job_seeker/edit"><img src="/assets/edit1.png"></a></span></h4>
+            <div class="row" style="width:80%;height:100px;">
+              <div class="col-md-2">
+                  <p><%=@studentsexperience.start_date%>-<b> <%=@studentsexperience.end_date%></b></p> 
+              </div>
+              <div class="col-md-1">
+                <div id="cir">
+
+                </div>
+                <div class="verticalLine">
+
+                </div>
+              </div>
+              <div class="col-md-5" style="height: 100px;">
+              <h4><b><%=@studentsexperience.organisation_name%>,<%=@studentsexperience.place%></b></h4>
+                <p><span style="color: blue;"><%=@studentsexperience.designation%> </span><br><%=@studentsexperience.work_description%> </p>
+              </div>
+              <div class="col-md-4"></div>
+            </div>
+            <div class="row" style="width:80%;height:100px;" >
+              <div class="col-md-2">
+                <p>2012 -<b> 2009</b></p>
+              </div>
+              <div class="col-md-1">
+                <div id="cir">
+
+                </div>
+                <div class="verticalLine">
+
+                </div>
+              </div>
+              <div class="col-md-5" style="height: 100px;">
+                 <h4><b>G&D DESIGNS, Chennai</b></h4>
+                <p><span style="color: blue;">Chief Creative Officer </span><br>There are many variations of passages of Lorem Ipsum available,but the majority have suffered </p>
+              </div>
+              <div class="col-md-4"></div>
+            </div>
+            <div class="row" style="width:80%;height:100px;">
+              <div class="col-md-2">
+                <p>2012 -<b> 2009</b></p>
+              </div>
+              <div class="col-md-1">
+                <div id="cir">
+
+                </div>
+                <div class="verticalLine">
+
+                </div>
+              </div>
+              <div class="col-md-5" style="height: 100px;">
+                <h4><b>G&D DESIGNS, Chennai</b></h4>
+                <p><span style="color: blue;">Chief Creative Officer </span><br>There are many variations of passages of Lorem Ipsum available,but the majority have suffered </p>
+              </div>
+              <div class="col-md-4"></div>
+            </div>
+            <div class="row" style="width:80%;height:100px;">
+              <div class="col-md-2">
+                <p>2009 - <b>2004</b></p>
+              </div>
+              <div class="col-md-1">
+                <div id="cir">
+
+                </div>
+                <div class="verticalLine">
+
+                </div>
+              </div>
+              <div class="col-md-5" style="height: 100px;">
+                <h4><b>PENCIL ONE, Bangalore</b></h4>
+                <p><span style="color: blue;">Chief Creative Officer </span><br>There are many variations of passages of Lorem Ipsum available,but the majority have suffered </p>
+              </div>
+              <div class="col-md-4"></div>
+            </div>
+            <div class="row" style="width:80%;height:100px;">
+              <div class="col-md-2">
+                <p>2004 -<b> 2003</b></p>
+              </div>
+              <div class="col-md-1">
+                <div id="cir">
+
+                </div>
+                <div class="verticalLine">
+
+                </div>
+              </div>
+              <div class="col-md-5" style="height: 100px;">
+                <h4><b>AMAZON, Bangalore</b></h4>
+                <p><span style="color: blue;">Chief Creative Officer </span><br>There are many variations of passages of Lorem Ipsum available,but the majority have suffered </p>
+              </div>
+              <div class="col-md-4"></div>
+            </div>
+          </div>
+          <div class="workexperiance">
+            <h4><span "><img src="/assets/book.png"></span>&nbsp&nbspEducation Background<span style="margin-left:45%;"><a href="/job_seeker/edit"><img src="/assets/edit1.png"></a></span></h4>
+            <div class="row" style="width:80%;height:100px;margin-top: 2em;">
+              <div class="col-md-2">
+                <p><%=@studentseducation.year_and_month_of_graduation %></p>
+              </div>
+              <div class="col-md-1">
+                <div id="cir">
+
+                </div>
+                <div class="verticalLine">
+
+                </div>
+              </div>
+              <div class="col-md-5" style="height: 100px;">
+                <h4><b><%=@studentseducation.university%>,<%=@studentseducation.place%></b></h4>
+                <p><span style="color: blue;"><%=@studentseducation.course_name%>,<%=@studentseducation.graduation%>,<%=@studentseducation.grade%></span><br>There are many variations of passages of Lorem Ipsum available,but the majority have suffered </p>
+              </div>
+              <div class="col-md-4"></div>
+            </div>
+            <div class="row" style="width:80%;height:100px;" >
+              <div class="col-md-2">
+                <p>2012</p>
+              </div>
+              <div class="col-md-1">
+                <div id="cir">
+
+                </div>
+                <div class="verticalLine">
+
+                </div>
+              </div>
+              <div class="col-md-5" style="height: 100px;">
+                <h4><b>DESIGNS, Bangalore</b></h4>
+                <p><span style="color: blue;">Chief Creative Officer </span><br>There are many variations of passages of Lorem Ipsum available,but the majority have suffered </p>
+              </div>
+              <div class="col-md-4"></div>
+            </div>
+          </div>
+          <div class="availablefor">
+            <h4><span "><img src="/assets/calender.png"></span>&nbsp&nbspAvailable For<span style="margin-left:51%;"><a href="/job_seeker/edit"><img src="/assets/edit1.png"></a></span></h4>
+            <div class="row" style="width:80%;height:60px;margin-top: 3em;margin-left: 2em;">
+              <div class="col-md-4">
+                <p>Internship</p>
+              </div>
+              <div class="col-md-2">
+                <p><%=@studentsavailable.internfrom%> </p>
+              </div>
+              <div class="col-md-2"">
+
+                <p><%=@studentsavailable.internto%></p>
+              </div>
+            </div>
+            <div class="row" style="width:80%;height:60px;margin-left: 2em;">
+              <div class="col-md-4">
+                <p>Project</p>
+              </div>
+              <div class="col-md-2">
+                <p><%=@studentsavailable.projectfrom%></p>
+              </div>
+              <div class="col-md-2" ">
+
+                <p><%=@studentsavailable.projectto%></p>
+              </div>
+            </div>
+            <div class="row" style="width:80%;height:60px;margin-left: 2em;">
+              <div class="col-md-4">
+                <p>Full Time Employment</p>
+              </div>
+              <div class="col-md-2">
+                <p><%=@studentsavailable.fulltimefrom%></p>
+              </div>
+
+            </div>
+          </div>
+          <div class="languagesknown">
+            <h4><span "><img src="/assets/globe.png"></span>&nbsp&nbspLanguages Known<span style="margin-left:48%;"><a href="/job_seeker/edit"><img src="/assets/edit1.png"></a></span></h4>
+            <div class="row" style="width:80%;height:60px;margin-top: 3em;margin-left: 2em;">
+              <div class="col-md-4" style="height:60px;">
+                <p >English</p>
+                <p style="margin-top: 2em;">Spanish</p>
+                <p style="margin-top: 2em;">Scotish</p>
+              </div>
+              <div class="col-md-8" style="height:60px;">
+                <form>
+                  <div class="checkbox">
+                    <label><input type="checkbox"  value="Novice" <%if @studentslanguage.english == "Novice" %>checked<% end%>>Novoice</label>
+                    <label><input type="checkbox"  value="Intermediary" <%if @studentslanguage.english == "Intermediary" %>checked<% end%>>Intermediary</label>
+                    <label><input type="checkbox" value="Expert" <%if @studentslanguage.english == "Expert"%>checked<% end%>>Expert</label>
+                  </div>
+                  <div class="checkbox" style="margin-top: 2em;">
+                    <label><input type="checkbox" value="Novice" <%if @studentslanguage.spanish == "Novice" %>checked<% end%>>Novoice</label>
+                    <label><input type="checkbox" value="Intermediary" <%if @studentslanguage.spanish == "Intermediary" %>checked<% end%>>Intermediary</label>
+                    <label><input type="checkbox" value="Expert" <%if @studentslanguage.spanish == "Expert"%>checked<% end%>>Expert</label>
+                  </div>
+                  <div class="checkbox" style="margin-top: 2em;">
+                    <label><input type="checkbox" value="Novice" <%if @studentslanguage.scotish == "Novice" %>checked<% end%>>Novoice</label>
+                    <label><input type="checkbox" value="Intermediary" <%if @studentslanguage.scotish == "Intermediary" %>checked<% end%>>Intermediary</label>
+                    <label><input type="checkbox" value="Expert" <%if @studentslanguage.scotish == "Expert"%>checked<% end%>>Expert</label>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div><br><br>
+          <div class="assignments">
+            <h4><span><img src="/assets/list.png"></span>&nbsp&nbspAssignments<span style="margin-left:51%;"><a href="/job_seeker/edit"><img src="/assets/edit1.png"></a></span></h4>
+            <p>Images</p>
+            <img src="/assets/assignments.png">
+            <p>Videos</p>
+            <img class="vidio" src="/assets/video2.png">
+            <img class="vidio" src="/assets/video3.png">
+            <img class="vidio" src="/assets/video4.png"><br>
+            <img class="vidio" src="/assets/video5.png">
+            <img class="vidio" src="/assets/video6.png">
+            <img class="vidio" src="/assets/video7.png">
+<!--<div class="row">
+<p>Images</p>
+<div class="col-md-4">
+<img src="">
+<img src="">
+</div>
+<div class="col-md-4">
+<img src="">
+<img src="">
+</div>
+<div class="col-md-4">
+<img src="">
+<img src="">
+</div>
+</div>-->
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+<footer class="footer-bs">
+  <div class="row">
+    <div class="col-md-4 footer-brand animated fadeInLeft">
+      <h2>About Scot's Hunt</h2>
+      <img src="/assets/scothunt.png" class="pull-left img-responsive">
+      <p>University of west scotland is simply dummy text of the printing and<br> typesetting industry. Lorem Ipsum has been the industry's standard dummy.<br> University of west scotland is simply dummy text of the printing and<br> typesetting industry. Lorem Ipsum has been the industry's standard<br> dummy</p>
+      <p> CopyRight 2017 Scot's Hunt</p>
+    </div>
+    <div class="col-md-3 footer-nav animated fadeInUp">
+      <h2>Quick Links</h2>
+      <div class="col-md-6">
+        <ul class="pages">
+          <li><a href="#">Local jobs</a></li>
+          <li><a href="#">Browse jobs</a></li>
+          <li><a href="#">SuccessStories</a></li>
+          <li><a href="#">Post a Job</a></li>
+          <li><a href="#">Publisher</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="col-md-2 footer-social animated fadeInDown">
+      <h2>Company</h2>
+      <ul>
+        <li><a href="#">Company Directory</a></li>
+        <li><a href="#">Salary estimate</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Employer Login</a></li>
+        <li><a href="#">Include My Jobs</a></li>
+      </ul>
+    </div>
+    <div class="col-md-3 footer-ns animated fadeInRight">
+      <h2>Newsletter</h2>
+      <p>Subscribe to get our latest updates and offers</p>
+      <p>
+        <div class="input-group" style="background-color: transparent;">
+          <input type="text" style="background-color: transparent;border: 1px solid white;"  class="form-control" placeholder="Entrer your email">
+          <span  style="border: 1px solid white;" class="input-group-btn">
+            <button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
+          </span>
+        </div><!-- /input-group -->
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

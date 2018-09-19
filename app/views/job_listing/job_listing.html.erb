@@ -1,0 +1,430 @@
+3<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Joblisting</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+  #one{
+       background:linear-gradient(0deg,rgba(20,20,20,0.75),rgba(20,20,20,0.75)),url("/assets/studentprofilebg.png");
+      background-size: cover;
+      width: 100%;
+        color: white;
+  
+  padding: 8em 0;
+}
+.logoutbtn{
+  float:right;
+  margin: 1em;
+  background-color: transparent;
+  border-radius: 10px;
+  border:1px solid white;
+}
+.logoutbtn a{
+text-decoration: none;
+color: white;
+
+}
+a{
+  color: white;
+}
+input[type="text"],
+select.form-control {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+  color: white;
+
+}
+
+input[type="text"]:focus,
+select.form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.input-group-addon{
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+  color: white;
+
+}
+
+.input-group:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+  .footer-bs {
+    background-color: #3c3d41;
+  padding: 40px 20px;   
+  color: rgba(255,255,255,1.00);
+  margin-top: 2em;
+  
+
+}
+.footer-bs .footer-brand, .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { padding:10px 20px; }
+.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-color: transparent; }
+.footer-bs .footer-brand h2 { margin:0px 0px 10px; }
+.footer-bs .footer-brand p { font-size:15px; color:rgba(255,255,255,0.70); }
+
+.footer-bs .footer-nav ul.pages { list-style:none; padding:0px; }
+.footer-bs .footer-nav ul.pages li { padding:5px 0px;}
+.footer-bs .footer-nav ul.pages a { color:rgba(255,255,255,0.75); }
+.footer-bs .footer-nav ul.pages a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+.footer-bs .footer-nav h4 {
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom:10px;
+}
+
+
+
+.footer-bs .footer-social ul { list-style:none; padding:0px; }
+.footer-bs .footer-social h4 {
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+.footer-bs .footer-social li { padding:5px 4px;}
+.footer-bs .footer-social a { color:rgba(255,255,255,0.75);}
+.footer-bs .footer-social a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+
+.footer-bs .footer-ns h4 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom:10px;
+}
+.footer-bs .footer-ns p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+@media (min-width: 768px) {
+  .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-left:solid 1px rgba(255,255,255,0.10); }
+}
+input[type=checkbox].css-checkbox,
+input[type=checkbox].css-checkbox1,
+input[type=checkbox].css-checkbox2 
+{
+              position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0);   padding:0; border:0;
+            }
+
+            input[type=checkbox].css-checkbox + label.css-label,
+            input[type=checkbox].css-checkbox1 + label.css-label1,
+            input[type=checkbox].css-checkbox2 + label.css-label2 {
+              padding-left:55px;
+              padding-top: 10px;
+
+              height:50px;
+              color: black; 
+      
+          
+              background-repeat:no-repeat;
+              background-position: 0 0;
+              font-size:18px;
+          
+              cursor:pointer;
+
+            }
+
+            input[type=checkbox].css-checkbox:checked + label.css-label,
+            input[type=checkbox].css-checkbox1:checked + label.css-label1,
+            input[type=checkbox].css-checkbox2:checked + label.css-label2 {
+              background-position: 0 -50px;
+
+            }
+            label.css-label ,
+            label.css-label1,
+            label.css-label2{
+        background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_c7bbfae6713f6bfaa9d524ad5dd33367.png);
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+      }
+      select {
+/* make arrow and background */
+
+  background:
+    linear-gradient(45deg, transparent 50%, white 50%),
+    linear-gradient(135deg, white 50%, transparent 50%),
+    linear-gradient(to right, transparent, transparent);
+  background-position:
+    calc(100% - 21px) calc(1em + 2px),
+    calc(100% - 16px) calc(1em + 2px),
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2.5em 2.5em;
+  background-repeat: no-repeat;
+
+  /* styling and reset */
+
+  border: 1px solid white;
+  border-left: 0;
+  border-right: 0;
+  
+
+  padding: 0.75em 2em;
+
+  /* reset */
+
+  border-radius: 0;
+  margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  border-top: 0;
+}
+#wrapper {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3em; 
+}
+
+</style>
+</head>
+<body>
+<header >
+      <a class="navbar-brand" href="#"><img style="height:30px;width:200px; padding-left: 2em" src="/assets/scot'shuntlogo.png"></a>
+         <a href="/logout" class="logoutbtn" style="text-decoration: none;"><span class="glyphicon glyphicon-user"></span> Logout</a>
+    
+
+
+      </header>
+      <div class="container" id="one">
+    <div class="container" style="padding-left: 8em;" >   
+      <h2 >Find your Job &nbsp&nbsp<span class="glyphicon glyphicon-search" style="color: white;"></span></h2>
+      <form class="form-inline" method="get" action="/job_listing/job_listing" style="padding-top: 1em;" id="searchjob">
+
+        <div class="form-group">
+
+          <div class='input-group-field'>
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-stats"></span></span>
+                <!-- <input class= "form-control" type="text" id="dropdownMenu1" placeholder="Industry" name="job_category">
+          --><select name="job_category" id="searchindustry">
+    <option value="" selected disabled >Industry</option>
+    <option value="IT">IT</option>
+    <option value="Sales">Sales</option>
+    <option value="Marketting">Marketting</option>
+    <option value=""></option>
+</select>
+              </div>
+            </div>
+          </div>
+        <div class="form-group" style="margin-left: 7em;">
+          <div class='input-group-field'>
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span></span>
+               <select name="job_location" id="searchlocation">
+  <option value="" selected disabled>Location</option>
+    <option value="Chennai" name="Chennai">Chennai</option>
+    <option value="Bangalore">Bangalore</option>
+    <option value="Mumbai">Mumbai</option>
+    <option value="Delhi">Delhi</option>
+    <option value=""></option>
+</select>
+<!-- <input class= "form-control" type="text" id="dropdownMenu1" placeholder="Location" name="place">-->
+              </div>
+            </div>
+          </div>
+        <div class="form-group"  style="margin-left: 7em;">
+          <div class='input-group-field'>
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-briefcase"></span></span>
+                <select name="job_type" id="searchjobtype">
+  <option value="" selected disabled>Type of Job</option>
+    <option value="Internship">Internship</option>
+    <option value="Project">Project</option>
+    <option value="Fulltime">Fulltime</option>
+    <option value=""></option>
+</select>
+ <!--<input class= "form-control" type="text" id="dropdownMenu1" placeholder="Type of Job" name="">-->
+              </div>
+            </div>
+          </div>
+        <div class="form-group"  style="margin-left: 7em;">
+          <input type="submit" class="btn btn-default" id="submitsearch" value="Submit" >
+        </div>
+      </div>
+    </form>
+  </div>
+
+          <div class="container">
+              <div class="row" style="background-color: #77bdfb;margin-top: 3em;">
+                    <form id="checkbox">
+   
+     
+         <label style="padding: 1em;"><input name="job_type[]" type="checkbox" id="internship" value="Internship" class="jobtype">Internship</label>
+             <label style="padding: 1em;"><input name="job_type[]" type="checkbox" value="project" id="project" class="jobtype" >Project</label>
+      <label style="padding: 1em;"><input name="job_type[]" type="checkbox" id="fulltime" value="fulltime" class="jobtype" >Full Time</label>
+   
+  </form>
+              </div>
+              <p style="margin-top: 3em;">Showing All Jobs</p>
+              <div style="box-shadow: 10px 10px 5px  #888888;border: 1px solid grey" id='job_listings'>
+              <%=render :partial=>'job_listing'%>
+
+             
+<hr>
+              </div>
+          </div>
+          <div id="wrapper">
+          <a href="/job_seeker/studentprofile/"><input type="submit" class="btn-primary" style="padding:0.5em 2em;float: right;border-radius: 5px;border: none;text-align: center; position: relative; float: right;" value="Back to Profile"></a>
+            <br><br><br>
+            </div>
+            <footer class="footer-bs">
+        <div class="row" style="">
+            <div class="col-md-4 footer-brand animated fadeInLeft">
+                <h2>About Scot's Hunt</h2>
+                <img src="/assets/scothunt.png" class="pull-left img-responsive">
+                <p>University of west scotland is simply dummy text of the printing and<br> typesetting industry. Lorem Ipsum has been the industry's standard dummy.<br> University of west scotland is simply dummy text of the printing and<br> typesetting industry. Lorem Ipsum has been the industry's standard<br> dummy</p>
+                <p> CopyRight 2017 Scot's Hunt</p>
+            </div>
+            <div class="col-md-3 footer-nav animated fadeInUp">
+                <h2>Quick Links</h2>
+                <div class="col-md-6">
+                    <ul class="pages">
+                        <li><a href="#">Local jobs</a></li>
+                        <li><a href="#">Browse jobs</a></li>
+                        <li><a href="#">SuccessStories</a></li>
+                        <li><a href="#">Post a Job</a></li>
+                        <li><a href="#">Publisher</a></li>
+                    </ul>
+                </div>
+            
+            </div>
+            <div class="col-md-2 footer-social animated fadeInDown">
+                <h2>Company</h2>
+                <ul>
+                    <li><a href="#">Company Directory</a></li>
+                    <li><a href="#">Salary estimate</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Employer Login</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-ns animated fadeInRight">
+                <h2>Newsletter</h2>
+                <p>Subscribe to get our latest updates and offers</p>
+                <p>
+                    <div class="input-group" style="background-color: transparent;">
+                      <input type="text" style="background-color: transparent;border: 1px solid white;"  class="form-control" placeholder="Entrer your email">
+                      <span  style="border: 1px solid white;" class="input-group-btn">
+                        <button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
+                      </span>
+                    </div><!-- /input-group -->
+                 </p>
+            </div>
+        </div>
+    </footer>
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>
+      jQuery(document).ready(function($){
+  var searchsubmit = $('#submitsearch');
+    var jobtypefilter = $('.jobtype');
+
+<%if params[:job_location].present?%>
+$("#searchlocation").val("<%=params[:job_location]%>")
+<%end%>
+   <%if params[:job_category].present?%>
+$("#searchindustry").val("<%=params[:job_category]%>")
+<%end%> 
+   <%if params[:job_type].present?%>
+$("#searchjobtype").val("<%=params[:job_type]%>")
+<%end%>
+  searchsubmit.on('click',function(event){
+   
+           event.preventDefault();
+          $.ajax({
+      type : 'GET',
+
+      url : "/job_listing/search",
+
+      data :$('#searchjob').serialize(),
+      
+      dataType : 'html',
+      
+      success : function(response) {
+  
+$('#job_listings').html(response);
+      }
+
+
+    });
+
+  });
+  jobtypefilter.on('change',function(event){
+    $('.job_listings').hide();
+
+//alert(this.checked)
+//alert($('.jobtype').filter(':checked').length > 0);
+if($('.jobtype').filter(':checked').length > 0)
+
+{
+
+
+
+
+$('.jobtype').each(function(){
+
+ if(this.checked && $(this).val()=="Internship") {
+        //Do stuff
+   $('.Internship').show();
+  
+        
+}
+
+   if(this.checked && $(this).val()=="project") {
+        //Do stuff
+     $('.project').show();
+    
+             
+  }
+
+
+   if(this.checked && $(this).val()=="fulltime") {
+        //Do stuff
+     $('.fulltime').show();
+    
+             
+  }
+ 
+})
+
+}
+else
+{
+  $('.job_listings').show();
+
+
+}
+     
+//}
+
+  });
+
+
+
+});
+</script>
+
+</body>
+
+
+
+</html>

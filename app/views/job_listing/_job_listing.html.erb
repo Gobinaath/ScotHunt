@@ -1,0 +1,87 @@
+ <% if @jobsearch.present? %>
+ <% @jobsearch.each do |a| %>
+          
+               <div class="row <%= a.job_type %> job_listings" style="padding-top: 1.5em;">
+              <div class="col-md-2">
+<%#<%= a.job_type %>
+              <img src="/assets/techmahindra.png" style="padding: 1em;">
+              </div>
+              <div class="col-md-3">
+                  <p style="font-size: 20px;color: #1999d5"><%=a.job_category%></p>
+                  <p><b><%=a.company_name%></b>&nbsp&nbsp <%=a.job_title%></p>
+              </div>
+              <div class="col-md-3">
+          <p style="text-align: center;font-size: 18px;"><span><img src="/assets/location.png"></span>&nbsp&nbsp<%=a.job_location%></p>
+              </div>
+              <div class="col-md-2">
+                  <p><%=a.job_type%></p>
+              </div>
+              <div class="col-md-1">
+              <button class="btn btn-primary apply_button" data-id="<%= a.id %>" >Apply</button>
+              </div>
+              <div class="col-md-1">
+                  <button class="btn btn-success save_button" data-id="<%= a.id %>">save</button>
+              </div>
+              <hr>
+              </div>
+            
+               <%end%>
+
+<%else%>
+<p>Nothing is present</p>
+
+<%end%>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>
+      jQuery(document).ready(function($){
+  var applyjob = $('.apply_button');
+       savejob = $('.save_button');
+    
+  applyjob.on('click',function(event){
+   id=$(this).data("id")
+           event.preventDefault();
+          $.ajax({
+      type : 'GET',
+
+      url : "/applyjob/apply",
+
+      data :"job_listing_id="+id,
+      
+      dataType : 'json',
+      
+      success : function(response) {
+  
+alert("job applied");
+
+      }
+
+
+    });
+
+  });
+
+  savejob.on('click',function(event){
+   id=$(this).data("id")
+           event.preventDefault();
+          $.ajax({
+      type : 'GET',
+
+      url : "/applyjob/save",
+
+      data :"job_listing_id="+id,
+      
+      dataType : 'json',
+      
+      success : function(response) {
+  
+alert("job saved");
+
+      }
+
+
+    });
+
+  });
+
+});
+</script>

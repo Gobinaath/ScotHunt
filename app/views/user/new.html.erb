@@ -1,0 +1,54 @@
+<!--<section style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDhiHF1FD118ebocKPIXT-VgPuTEJAeSDTCtgYnD8-8h8FRtnXhQ);font-size:25px;background-repeat: no-repeat;background-size:100% 100%">-->
+<%= form_for  do |f| %>
+<% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@user.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= f.label :roles%><br>
+    <!--<%= f.text_field :roles%>-->
+  <%= f.select :roles, [ 'job_seeker','recruiter','moderator' ] %>
+
+  </p>
+
+
+  <p>
+    <%= f.label :first_name%><br>
+    <%= f.text_field :first_name %>
+  </p>
+ 
+  <p>
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </p>
+
+    <p>
+    <%= f.label :email%><br>
+    <%= f.email_field :email%>
+  </p>
+
+  <p>
+   <%= f.label :password%><br>
+   <%= f.password_field :password %>
+  </p>
+
+   <p>
+    <%= f.label :mobile_num %><br>
+    <%= f.text_field :mobile_num %>
+  </p>
+  
+
+
+  <p>
+    <%= f.submit "Sign-Up" %>
+  </p>
+<% end %>

@@ -1,0 +1,2 @@
+class ExperianceDetail < ApplicationRecord
+end

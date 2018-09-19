@@ -1,0 +1,623 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>studentprofile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+  <style>
+  #one{
+       background:linear-gradient(0deg,rgba(50,50,50,0.75),rgba(20,20,20,0.5)),url("/assets/headerrbg.png");
+      background-size: cover;
+      width: 100%;
+        color: white;
+  
+  padding: 8em 0;
+}
+
+#two{
+background-color: white;
+color: black;
+  border-radius: 30px;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+
+  box-shadow: 10px 10px 10px grey;
+
+width:90%;
+margin: 2em auto;
+  position: absolute;
+  padding: 5em 1.5em;
+ }
+ #three{
+
+color: black;
+     box-shadow: 10px 10px 10px lightgrey;
+  background-color:white;
+width:15%;
+left: 43%;  
+  height: 30%;
+  position: absolute;
+ }
+ .form-group{
+  padding:1em;
+ }
+.text-line {
+    background-color: transparent;
+    color: black;
+    outline: none;
+    outline-style: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #eeeeee 1px;
+    padding: 3px 10px;
+}
+
+.btn{
+ color: white;
+  float:right;
+  margin: 1em;
+  background-color: transparent;
+  border-radius: 10px;
+}
+ a{
+text-decoration: none;
+color: white;
+
+}
+
+input[type="text"],
+select.form-control {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+
+
+}
+
+input[type="text"]:focus,
+select.form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+
+}
+
+
+
+.input-group-addon{
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+
+}
+
+.input-group:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+input[type="text"]:disabled{background-color:transparent;}
+  .footer-bs {
+    background-color: #3c3d41;
+  padding: 60px 40px;   
+  color: rgba(255,255,255,1.00);
+  
+
+}
+.footer-bs .footer-brand, .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { padding:10px 20px; }
+.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-color: transparent; }
+.footer-bs .footer-brand h2 { margin:0px 0px 10px; }
+.footer-bs .footer-brand p { font-size:15px; color:rgba(255,255,255,0.70); }
+
+.footer-bs .footer-nav ul.pages { list-style:none; padding:0px; }
+.footer-bs .footer-nav ul.pages li { padding:5px 0px;}
+.footer-bs .footer-nav ul.pages a { color:rgba(255,255,255,0.75); }
+.footer-bs .footer-nav ul.pages a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+.footer-bs .footer-nav h4 {
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom:10px;
+}
+
+
+
+.footer-bs .footer-social ul { list-style:none; padding:0px; }
+.footer-bs .footer-social h4 {
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+.footer-bs .footer-social li { padding:5px 4px;}
+.footer-bs .footer-social a { color:rgba(255,255,255,0.75);}
+.footer-bs .footer-social a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+
+.footer-bs .footer-ns h4 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom:10px;
+}
+.footer-bs .footer-ns p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+@media (min-width: 768px) {
+  .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-left:solid 1px rgba(255,255,255,0.10); }
+}
+select {
+/* make arrow and background */
+text-transform:first-letter: uppercase;
+  background:
+    linear-gradient(45deg, transparent 50%, black 50%),
+    linear-gradient(135deg, black 50%, transparent 50%),
+    linear-gradient(to right, transparent, transparent);
+  background-position:
+    calc(100% - 21px) calc(1em + 2px),
+    calc(100% - 16px) calc(1em + 2px),
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2.5em 2.5em;
+  background-repeat: no-repeat;
+
+  /* styling and reset */
+
+  border: 1px solid black;
+  border-left: 0;
+  border-right: 0;
+  margin-top: 0;
+  
+
+  padding: 0.75em 4em;
+padding-left: 0.25em;
+  /* reset */
+
+  border-radius: 0;
+  margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  border-top: 0;
+}
+  </style>
+</head>
+<body>
+  <header>
+      <a class="navbar-brand" href=""><img style="height:30px;width:200px; padding-left: 2em" src="/assets/scot'shuntlogo.png"></a>
+
+ <a href="/logout" class="btn btn-default"><span class="glyphicon glyphicon-user"></span> Logout</a>  
+          
+          </header>
+      <div class="container" id="one" >
+<div class="container">
+      
+      <div class="container" id="two">
+      <center><h3 style="margin-top: 5em;text-transform: uppercase; "><%=@studentname.first_name%>  <%=@studentname.last_name%></h3></center>
+      <br>
+      <br>
+<form class="form-inline" name="job_seeker" method="post">
+<input type="hidden" name="job_seeker[users_id]" value = "<%= @current_user.id %>" >
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%> ">
+        <div class="form-group">
+    <label style="font-family: 'Lato';font-size: 18px;font-weight: 400;">Video Resume </label>
+   </div>
+    <div class="form-group">
+      <input type="text" class="form-control input-lg" style="width: 230%;height: 40px;border: 1px solid gray;" placeholder="Share Your Link here">
+    </div>
+  <h4><span class="glyphicon glyphicon-user"></span>&nbsp Personal Details</h4>
+  <div class="form-group">
+  <div class="input-group">
+    <input type="text" class="form-control"  placeholder="DOB*" id = 'datetimepicker' name="job_seeker[dob]" required="required">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+    </div>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control"  placeholder="Linkedin Link*" name="job_seeker[linkedin_link]" required="required">
+  </div>
+ <div class="form-group">
+    <input type="text" class="form-control"  placeholder="Skype Id*" name="job_seeker[skype_id]" required="required">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control"  placeholder="Profile Title*(eg.Freelance Developer)" name="job_seeker[profile_title]" required="required">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control"  placeholder="address" name="job_seeker[address]" required="required">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control"  placeholder="phone_number" name="job_seeker[phone_number]" required="required" maxlength="10">
+  </div>
+
+   <div class="form-group">
+   <p>Profile Description*</p>
+ <textarea class="form-control" rows="5" cols="50"  placeholder="Minimum 120 Characters" name ="job_seeker[profile_description]" required="required"></textarea>
+    </div>
+<h4><span class="glyphicon glyphicon-globe"></span>&nbsp Languages Known</h4>
+  <div class="form-group">
+    
+    <input type="text" class="form-control"  placeholder="English" disabled>
+  </div>
+  <div class="form-group">
+    <div class="radio">
+  <label>
+    <input type="radio" name="job_seeker[english]" id="optionsRadios1" value="Novice"  >
+   Novice
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="job_seeker[english]" id="optionsRadios2" value="Intermediary" >
+   Intermediary
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="job_seeker[english]" id="optionsRadios3" value="Expert" >
+   Expert
+  </label>
+</div>
+
+  </div>
+  <br>
+  <div class="form-group">
+    
+    <input type="text" class="form-control"  placeholder="Spanish" disabled>
+  </div>
+  <div class="form-group">
+    <div class="radio">
+  <label>
+    <input type="radio" name="job_seeker[spanish]" id="optionsRadios4" value="Novice">
+   Novice
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="job_seeker[spanish]" id="optionsRadios4" value="Intermediary" >
+   Intermediary
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="job_seeker[spanish]" id="optionsRadios5" value="Expert" >
+     Expert       
+  </label>
+</div>
+  </div>
+    <br>
+  <div class="form-group">
+    
+    <input type="text" class="form-control"  placeholder="Scotish" disabled>
+  </div>
+  <div class="form-group">
+    <div class="radio">
+  <label>
+    <input type="radio" name="job_seeker[scotish]" id="optionsRadios6" value="Novice" >
+   Novice
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="job_seeker[scotish]" id="optionsRadios7" value="Intermediary" >
+   Intermediary
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="job_seeker[scotish]" id="optionsRadios8" value="Expert">
+   Expert 
+  </label>
+</div>
+  </div>
+<h4><span class="glyphicon glyphicon-briefcase"></span>&nbsp Work Experiance (if any)</h4>
+ <div class="form-group">
+    <input type="text" class="form-control"  placeholder="Name of the Organisation" name="job_seeker[organisation_name]" >
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control"  placeholder="place" name="job_seeker[place]" >
+  </div>
+ <div class="form-group">
+ <div class="input-group">
+    <input type="text" class="form-control"  placeholder="From Date" id = 'datetimepicker1' name="job_seeker[start_date]" >
+    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+    </div>
+  </div>
+ <div class="form-group">
+ <div class="input-group">
+    <input type="text" class="form-control"  placeholder="To Date" id = 'datetimepicker2' name="job_seeker[end_date]" >
+    <span class="input-group-addon" id="start-date"><span class="glyphicon glyphicon-calendar"></span></span>
+    </div>
+  </div>
+
+   <div class="form-group">
+    <input type="text" class="form-control"  placeholder="Designation" name="job_seeker[designation]" >
+  </div>
+  <div class="form-group" style="margin-top: 4em;">
+   <p>Work Description</p>
+ <textarea class="form-control" rows="5" cols="50"  placeholder="Minimum 120 Characters" name="job_seeker[work_description]" ></textarea>
+    </div>
+    
+<h4><span class="glyphicon glyphicon-book"></span>&nbsp Education Background</h4>
+<div class="form-group">
+      <select name="job_seeker[graduation]">
+  <option value="" selected disabled>Graduation*</option>
+    <option value="Bsc">Bsc</option>
+    <option value="BE">BE</option>
+    <option value="Bcom">Bcom</option>
+    <option value="Msc">Msc</option>
+    <option value="ME">ME</option>
+    <option value="Mcom">Mcom</option>
+    <option value="MBA">MBA</option>
+</select>  </div>
+  <div class="form-group">
+    <input type="text" class="form-control"  placeholder="Course*" name="job_seeker[course_name]" required="required">
+  </div>
+ <div class="form-group">
+ <div class="input-group">
+    <input type="text" class="form-control"  placeholder="From*" id = 'datetimepicker3' name="job_seeker[fromdate]" required="required">
+     <span class="input-group-addon" id="start-date"><span class="glyphicon glyphicon-calendar"></span></span>
+  </div>
+
+  </div>
+   <div class="form-group">
+ <div class="input-group">
+    <input type="text" class="form-control"  placeholder="To*" id = 'datetimepicker9' name="job_seeker[todate]" required="required">
+     <span class="input-group-addon" id="start-date"><span class="glyphicon glyphicon-calendar"></span></span>
+  </div>
+  
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control"  placeholder="University/High School Name*" name="job_seeker[university]" required="required">
+  </div>
+   <div class="form-group">
+    <input type="text" class="form-control"  placeholder="place*" name="job_seeker[place]" required="required">
+  </div>
+   <div class="form-group">
+    <input type="text" class="form-control"  placeholder="Grade" name="job_seeker[grade]" required="required">
+  </div>
+
+  <h4><span class="glyphicon glyphicon-blackboard"></span>&nbsp Job Details</h4>
+<div class="form-group">
+    <input type="text" class="form-control"  placeholder="Preffered Role*" name="job_seeker[preffered_role]" required="required">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control"  placeholder="Preffered industry*" name="job_seeker[prefferd_industry]" required="required">
+  </div>
+ <div class="form-group">
+    <input type="text" class="form-control"  placeholder="Preffered LOcation(3 cities)*" name="job_seeker[preffered_location]">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control"  placeholder="Preffered Organisation" name="job_seeker[preffered_organisation]">
+  </div>
+   <div class="form-group">
+   <select name="job_seeker[preffered_job_type]">
+  <option value="" selected disabled>Job Type*</option>
+    <option value="Internship">Internship</option>
+    <option value="Project">Project</option>
+    <option value="Fulltime">Fulltime</option>
+
+</select>
+  </div>
+   <div class="form-group">
+    <input type="text" class="form-control"  placeholder="Last CTC" name="job_seeker[current_salary]">
+  </div>
+   <div class="form-group">
+    <input type="text" class="form-control"  placeholder="Expected CTC" name="job_seeker[expected_salary]">
+  </div>
+  <h4><span class="glyphicon glyphicon-user "></span>&nbsp Skill Sets</h4>
+  <textarea class="form-control" rows="3" cols="50"  placeholder="Writing" name="job_seeker[sill_name]"></textarea>
+  <h4><span class="glyphicon glyphicon-calendar "></span>&nbsp Available Dates</h4>
+  <div class="form-group">
+    <label for="intershipdate">For Internship</label>
+  </div>
+   <div class="form-group" style="margin-left: 5.5em;">
+   <div class="input-group">
+    <input type="text" class="form-control"  placeholder="From Date"  id = 'datetimepicker4' name="job_seeker[internfrom]">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></ss6tpan></span>
+    </div>
+  </div>
+  <div class="form-group" >
+  <div class="input-group">
+    <input type="text" class="form-control"  placeholder="To Date" id = 'datetimepicker5' name="job_seeker[internto]">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+    </div>
+  </div><br>
+  <div class="form-group" >
+    <label for="intershipdate">For Project</label>
+  </div>
+   <div class="form-group" style="margin-left: 7em;">
+   <div class="input-group">
+    <input type="text" class="form-control"  placeholder="From Date" id = 'datetimepicker6' name="job_seeker[projectfrom]">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+    </div>
+  </div>
+ <div class="form-group">
+  <div class="input-group">
+    <input type="text" class="form-control"  placeholder="To Date" id = 'datetimepicker7' name="job_seeker[projectto]">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+    </div>
+  </div><br>
+  <div class="form-group">
+    <label for="intershipdate">For Full time Employment</label>
+  </div>
+  <div class="form-group">
+   <div class="input-group">
+    <input type="text" class="form-control"  placeholder="From Date" id = 'datetimepicker8' name="job_seeker[fulltimefrom]">
+    <span class="input-group-addon" id="start-date"><span class="glyphicon glyphicon-calendar"></span></span>
+    </div>
+  </div><br>
+  <h4><span class="glyphicon glyphicon-list-alt "></span>&nbsp Assignments</h4>
+  <div class="form-group">
+    <label for="intershipdate">Images Link(if any)</label>
+  </div>
+   <div class="form-group">
+  <textarea class="form-control" rows="1" cols="90"  placeholder="Eg:Assignments,portfolio,etc" name="job_seeker[images_link]"></textarea>
+  </div>
+  <br>
+  <div class="form-group">
+    <label for="intershipdate">Videos Link(if any)</label>
+  </div>
+   <div class="form-group">
+  <textarea class="form-control" rows="1" cols="90"  placeholder="Eg:Assignments,portfolio,etc" name="job_seeker[videos_link]"></textarea>
+  </div>
+   <div class="form-group">
+   <p>Assignment Description</p>
+ <textarea class="form-control" rows="3" cols="50" name="job_seeker[assignment_description]" ></textarea>
+    </div><br>
+    <div class="form-group">
+   <p>Carreer Aspiration for next 3 years</p>
+ <textarea class="form-control" rows="3" cols="50"  placeholder="Minimum 50 Characters" name="job_seeker[carreer_aspiration]"></textarea>
+    </div><br>
+    <div align="center">
+<div class="form-group">
+  <input type="image" src="/assets/uploadresume.png" style="margin-bottom: 1em;" />
+
+<span class="glyphicon glyphicon-open"  style="top:-15" ></span>
+<input type="file" id="my_file" style="display: none;" />
+
+<p style="font-family: 'Lato';font-size: 18px;font-weight: 300;">Upload your Resume</p>
+</div>
+<div class="form-group">
+<img class="img-responsive" src="/assets/uploadcoverletter.png"   /">
+<span class="glyphicon glyphicon-open" style="float: right;margin-right: 5em;top:-10;left:5"></span>
+
+<input type="file" id="my_file" style="display: none;" />
+<br>
+
+<p style="font-family: 'Lato';font-size: 18px;font-weight: 300;">Upload your Cover Letter</p> 
+</div>
+
+</div>
+
+       <div style="padding: 1em">
+     <center><input type="submit" class="btn-primary" value="Save" style="padding:0.5em 2em;border-radius: 5px;border: none;font-size: 15px;margin-top: 1em;"></center>
+</div>
+</form>
+
+    
+
+      </div>
+      <div align="center" class="container " id="three">
+      <img class="img-responsive" src="/assets/edit.png" style="float: right;margin: 1em;">
+      <img class="img-responsive" src="/assets/photo.png" style="margin-top: 4em;">
+      <h4  style="margin-top: 4em;color: grey;">Upload photo</h4>
+
+      </div>
+
+    </div>
+  </div>
+
+  <section>
+  <div id="four" style="padding:100% 0;background-color: lightgray;background-size: cover;">
+  
+</div>
+  
+  </section>
+
+     <footer class="footer-bs">
+        <div class="row">
+          <div class="col-md-4 footer-brand animated fadeInLeft">
+              <h2>About Scot's Hunt</h2>
+              <!--<img src="/assets/scothunt.png" class="pull-left img-responsive">-->
+                <p>University of west scotland is simply dummy text of the printing and<br> typesetting industry. Lorem Ipsum has been the industry's standard dummy
+                <br><br><button class="btn btn-primary" style="margin-top:  1em;margin-right: 2em;">Read More</button></a>
+                <p> CopyRight 2017 Scot's Hunt</p>
+            </div>
+          <div class="col-md-3 footer-nav animated fadeInUp">
+              <h2>Quick Links</h2>
+              <div class="col-md-6">
+                    <ul class="pages">
+                        <li><a href="#">Local jobs</a></li>
+                        <li><a href="#">Browse jobs</a></li>
+                        <li><a href="#">SuccessStories</a></li>
+                        <li><a href="#">Post a Job</a></li>
+                        <li><a href="#">Publisher</a></li>
+                    </ul>
+                </div>
+            
+            </div>
+          <div class="col-md-2 footer-social animated fadeInDown">
+              <h2>Company</h2>
+              <ul>
+                  <li><a href="#">Company Directory</a></li>
+                  <li><a href="#">Salary estimate</a></li>
+                  <li><a href="#">Help</a></li>
+                  <li><a href="#">Employer Login</a></li>
+                  <li><a href="#">Include My Jobs</a></li>
+                </ul>
+            </div>
+          <div class="col-md-3 footer-ns animated fadeInRight">
+              <img src="/assets/fb.png" style="background: grey;margin: 0.5em;border-radius: 5px;">
+              <img src="/assets/p.png"  style="background: grey;margin: 0.5em;border-radius: 5px;">
+              <img src="/assets/insta.png"  style="background: grey;margin: 0.5em;border-radius: 5px;">
+              <img src="/assets/twitter.png"  style="background: grey;margin: 0.5em;border-radius: 5px;">
+              <h2>Newsletter</h2>
+                <p>Subscribe to get our latest updates and offers</p>
+                <p>
+                    <div class="input-group" style="background-color: transparent;">
+                      <input type="text" style="background-color: transparent;border: 1px solid white;border-radius:5px 0 0 5px;"  class="form-control" placeholder="Enter your email">
+                       <span  style="border: 1px solid white;background:white;border-radius: 0 5px 5px 0;" class="input-group-btn">
+                      <span ><img src="/assets/message.png"></span>
+                      </span>
+                    </div>
+                 </p>
+            </div>
+        </div>
+    </footer>
+
+<script>
+                $('#datetimepicker').datepicker({
+                  format: 'dd/mm/yyyy',
+                  showToday: true, 
+                });
+            $('#datetimepicker1').datepicker({
+                  format: 'dd/mm/yyyy',
+                  showToday: true, 
+                });
+              $('#datetimepicker2').datepicker({
+                  format: 'dd/mm/yyyy',
+                  showToday: true, 
+                });
+               $('#datetimepicker3').datepicker({
+                  format: 'dd/mm/yyyy',
+                  showToday: true, 
+                });
+               $('#datetimepicker4').datepicker({
+                  format: 'dd/mm/yyyy',
+                  showToday: true, 
+                });
+               $('#datetimepicker5').datepicker({
+                  format: 'dd/mm/yyyy',
+                  showToday: true, 
+                });
+               $('#datetimepicker6').datepicker({
+                  format: 'dd/mm/yyyy',
+                  showToday: true, 
+                });
+               $('#datetimepicker7').datepicker({
+                  format: 'dd/mm/yyyy',
+                  showToday: true, 
+                });
+               $('#datetimepicker8').datepicker({
+                  format: 'dd/mm/yyyy',
+                  showToday: true, 
+                });
+                $('#datetimepicker9').datepicker({
+                  format: 'dd/mm/yyyy',
+                  showToday: true, 
+                });
+
+               $("input[type='image']").click(function() {
+    $("input[id='my_file']").click();
+});
+        </script>
+</body>
+</html>

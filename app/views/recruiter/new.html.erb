@@ -1,0 +1,39 @@
+<h1>Recruiter Profile</h1>
+<p><!--<section style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDhiHF1FD118ebocKPIXT-VgPuTEJAeSDTCtgYnD8-8h8FRtnXhQ);font-size:25px;background-repeat: no-repeat;background-size:100% 100%">-->
+<%= form_for :recruiter do |f| %>
+
+<p>
+    <input type="hidden" name="recruiter[user_id]" value = "<%= session[:user_id] %>" >
+  </p>
+
+  <p>
+    <%= f.label :organisation_name%><br>
+    <%= f.text_field :organisation_name %>
+  </p>
+ 
+  <p>
+    <%= f.label :designation%><br>
+    <%= f.text_field :designation %>
+  </p>
+
+    <p>
+    <%= f.label :industry%><br>
+    <%= f.text_field :industry%>
+  </p>
+
+  <p>
+   <%= f.label :linkedin_link%><br>
+   <%= f.text_field :linkedin_link %>
+  </p>
+
+   <p>
+    <%= f.label :photo %><br>
+    <%= f.file_field :photo %>
+  </p>
+  
+
+
+  <p>
+    <%= f.submit "Create-Profile" %>
+  </p>
+<% end %>
